@@ -1,2 +1,1 @@
-
-\Story Club Minneapolis Website
+Story Club Minneapolis Website
