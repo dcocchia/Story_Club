@@ -1,0 +1,75 @@
+.header{
+	background: black;
+	width: 495px;
+	color: white;
+	opacity: 0.95;
+	filter: alpha(opacity=95);
+	text-align: center;
+	position: relative;
+	left: -3px;
+	height: 63px;
+	top: 15px;
+	vertical-align: middle;
+	line-height: 60px;
+	font-size: 37px;
+	margin-bottom: 20px;
+	-moz-box-shadow: 2px 2px 11px #3C3C3C;
+	-webkit-box-shadow: 2px 2px 11px #3C3C3C;
+	-o-box-shadow: 2px 2px 11px #3C3C3C;
+	box-shadow: 2px 2px 11px #3C3C3C;
+	z-index: 2;
+	text-shadow: 1px 2px 5px #B3B3B3;
+}
+
+.subHeader{
+	background: #B12727;
+	width: 10%;
+	text-align: center;
+	height: 32px;
+	position: relative;
+	top: -14px;
+	left: 20px;
+	vertical-align: middle;
+	line-height: 41px;
+	color: white;
+	border: 1px solid #54505A;
+	text-shadow: 1px 1px #39393F;
+}
+
+.suprise{
+	position: relative;
+	bottom: -54px;
+	left: 0px;
+	display: none;
+	font-size: 28px;
+	color: white;
+}
+
+.hover:hover{
+	-moz-box-shadow: inset 0 0 50px #333;
+	-webkit-box-shadow: inset 0 0 50px #333;
+	box-shadow: inset 0 0 50px #333;
+	cursor: pointer;
+}
+
+#plug{
+	background: #455B8B;
+	width: 188px;
+	text-align: center;
+	height: 32px;
+	position: absolute;
+	top: 57px;
+	left: 348px;
+	vertical-align: middle;
+	line-height: 32px;
+	color: white;
+	border: 1px solid #54505A;
+	text-shadow: 1px 1px #39393F;
+}
+
+#plug:hover{
+	cursor: pointer;
+	-moz-box-shadow: inset 0 0 50px #333;
+	-webkit-box-shadow: inset 0 0 50px #333;
+	box-shadow: inset 0 0 50px #333;
+}

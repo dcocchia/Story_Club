@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../scripts/mustache.js"></script>
+		<script type="text/javascript" src="../scripts/shareGrams.js"></script>
+		<link rel="stylesheet" type="text/css" href="../styles/styles.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<title>InstaViewer</title>
+	</head>
+	<body>
+		<h2 class="header"><span id='mainHeaderText'>InstaViewer</span>
+			<span id="headerImage"></span>
+			<div class='subBanner red'></div>
+			<div class='subBanner yellow'></div>
+			<div class='subBanner green'></div>
+			<div class='subBanner blue'></div>
+			<div id="statusBox">
+				<span id="statusText"></span>
+			</div>
+			<div id="spinner" class="spinnerInit"></div>
+		</h2>
+		<div class="left-Ribbon"></div>
+		<div class="right-Ribbon"></div>
+
+
+		<div class="popButton">
+			<div class="instaButtonWrapper">
+				<h3 id="instaPopButton" class="instaButton">Popular</h3>
+				<div id="popConnectLine" class="popConnectLine"></div>
+			</div>
+			<div class="instaPopButtonRibbon"></div>
+		</div>
+			
+		<div id="connectButton" class="conButton">
+			<div class="instaButtonWrapper">
+				<h3 class="instaButton">Connect</h3>
+				<div id="connectLine" class="connectLine"></div>
+			</div>
+			<div class="instaConnectButtonRibbon"></div>
+		</div>
+
+		<div class="domButton">
+			<div >
+				<h3 id="instaDomButton" class="instaButton">Dominic's</h3>
+				<div id="domConnectLine" class="domConnectLine"></div>
+			</div>
+			<div class="instaDomButtonRibbon"></div>
+		</div>
+
+		<div class="youButton">
+			<div>
+				<h3 id="instaYouButton" class="instaButton">Your Photos</h3>
+				<div id="youConnectLine" class="youConnectLine"></div>
+			</div>
+			<div class="instaYouButtonRibbon"></div>
+		</div>
+
+		<div id="outerInstaPopHolder" class="instaHolder">
+			<div id="tutorial" class="tutorial tutInit">
+				<div id='closeTutButton'>X</div>
+				<div id="tutContent">
+					<h2>Welcome to Insta<span id="tutSubText">Viewer</span>!</h2>
+					<p>Here you can view your own photos, my photos or the most popular photos</p>
+					<p>To start off, it'll load the most popular photos on Instagram</p>
+					<p>To view other photos, authorize Instaviewer by clicking Connect</p>
+					<p>Have fun!</p>
+				</div>
+			</div>
+			<ul id="instaPopHolder" class="instaPic"></ul>
+		</div>
+		<div id="photoViewOverlay" class="overlay"></div>
+		<div id="bottom_fade" class="bottom_fade"></div>
+	</body>
+</html>

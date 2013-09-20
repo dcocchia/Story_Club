@@ -1,16 +1,70 @@
+
+  /********************/
+ /*   Header Styles  */
+/********************/
+
+  header h2 {
+  	text-indent: -99999px;
+	margin: 0;
+	background: url(../img/plankHeader.png);
+	height: 200px;
+	width: 494px;
+	margin: 0 auto;
+	margin-top: -10px;
+  }
+
+  /********************/
+ /*   Font Styles    */
+/********************/
+
+@font-face {
+  font-family: Corbert;
+  src:	url('../fonts/Corbert.eot') format('eot');
+  src:	url('../fonts/Corbert.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  		url('../fonts/Corbert.woff') format('woff'),
+  		url('../fonts/Corbert.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: SanchezCondensed;
+  src:	url('../fonts/SanchezCondensed.eot') format('eot');
+  src:	url('../fonts/SanchezCondensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  		url('../fonts/SanchezCondensed.woff') format('woff'),
+  		url('../fonts/SanchezCondensed.ttf') format('truetype');
+}
+
   /*****************/
  /*   Nav Styles  */
 /*****************/
 
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	margin: 0;
+	position: relative;
+	/*background: url(../img/background.png) 0 0;*/
+}
+
 nav {
-	width: 75%;
+	width: 980px;
+	height: 100%;
 	margin: auto;
+	position: relative;
+}
+
+#picFrameWrapper {
+	position: relative;
+	margin: 0;
+	height: 100%
 }
 
 #picFrameWrapper,
 #picFrameWrapper li {
 	list-style-type: none;
-	margin: 2px 0px;
 }
 
 .picFrame {
@@ -18,6 +72,7 @@ nav {
 	padding: 0;
 	width: 205px;
 	display: inline-block;
+	position: absolute;
 }
 
 .picFrame .picFrameMainLink {
@@ -29,15 +84,21 @@ nav {
 	letter-spacing: 1px;
 	line-height: 205px;
 	text-align: center;
-	text-transform: uppercase;
 	width: 205px;
 	overflow: hidden;
 	position: relative;
+	font-family: SanchezCondensed;
+	text-decoration: none;
 }
 
 .picFrame a span {
 	position: relative;
+	top: 120px;
 	z-index: 100;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-image: url("about:blank"); //ie hack
 }
 
 .picFrame a .picSlider {
@@ -46,7 +107,7 @@ nav {
 	left: 0;
 	position: absolute;
 	top: 205px;
-	width: 205px;
+	width: 100%;
 }
 
 .picSliderContent {
@@ -55,10 +116,635 @@ nav {
 	top: 255px;
 	width: 200px;
 	line-height: 16px;
+	font-family: Corbert;
 }
 
 .picSliderContent span {
 	line-height: 16px;
+}
+
+.frameObj {
+	pointer-events: none;
+	position: absolute;
+	z-index: 50;
+}
+
+.MSIE .frameObj {
+	z-index: 0;
+}
+
+.MSIE .frame6.frameObj {
+	z-index: 50;
+}
+
+.MSIE .picFrame .picFrameMainLink {
+	z-index: 5;
+}
+
+.picFrame.frame1 {
+	box-shadow: 0 4px 20px black;
+	width: 143px;
+	height: 171px;
+	left: 110px;
+	top: 105px;
+}
+
+.frameObj.frame1 {
+	width: 150px;
+	left: -4px;
+	top: -2px;
+}
+
+.frame1 .picFrameMainLink { 
+	left: 23px;
+	width: 97px;
+	top: 23px;
+	height: 125px;
+	background: url("../img/canvasBGMed.png") 0 0;
+	color: #000;
+}
+
+.frame1 a span {
+	font-size: 16px;
+	margin: 0 auto;
+	top: 12px;
+	line-height: 18px;
+	width: 95px;
+}
+
+.frame1 a span.header {
+	height: 30px;
+}
+
+.frame1 a span.thurs {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	height: 20px;
+	width: 70px;
+	font-style: italic;
+}
+
+.frame1 a span.date {
+	margin-top: 15px;
+	font-size: 30px;
+}
+
+span.date .dateSlash {
+	font-style: italic;
+	display: inline;
+	top: 0;
+	font-size: 34px;
+}
+
+.Firefox span.nextShow.date {
+	margin-top: 0;
+}
+
+sup.topNum {
+	margin-right: -8px;
+}
+
+.frame1 a .picSlider {
+	background: url(../img/slider-frame1.png) 0 0 no-repeat;
+	z-index: 200;
+}
+
+.frame1 .picSliderContent {
+	width: 95px;
+	top: 190px;
+	left: 0;
+	color: #FFF;
+}
+
+.frame1 .picSliderContent span {
+	font-size: 12px;
+}
+
+.picFrame.frame2 {
+	width: 188px;
+	height: 143px;
+	box-shadow: 0 4px 15px black;
+	left: 575px;
+	top: 700px;
+}
+
+.frameObj.frame2 {
+	width: 190px;
+}
+
+.frame2 .picFrameMainLink {
+	width: 160px;
+	left: 15px;
+	height: 115px;
+	top: 15px;
+	background: url("../img/CAMERA.png") 0 0 no-repeat;
+}
+
+.frame2 a span {
+	line-height: 18px;
+	top: 80px;
+	height: 35px;
+}
+
+.frame2 a .picSlider {
+	width: 160px;
+}
+
+.frame2 .picSliderContent {
+	width: 160px;
+	top: 160px;
+}
+
+.picFrame.frame3 {
+	box-shadow: 0 4px 22px black;
+	width: 152px;
+	height: 191px;
+	left: 710px;
+	top: 80px;
+}
+
+.frameObj.frame3 {
+	width: 160px;
+	left: -3px;
+}
+
+.frame3 .picFrameMainLink { 
+	left: 15px;
+	width: 122px;
+	top: 18px;
+	height: 155px;
+	background: url("../img/canvasBGMed.png") 0 0;
+	color: #000;
+}
+
+.frame3 a span {
+	height: 100px;
+	font-size: 100px;
+	line-height: 100px;
+	top: 30px;
+	color: #3F3F3F;
+}
+
+
+.frame3 a .picSlider {
+	width: 122px;
+}
+
+.frame3 .picSliderContent {
+	width: 123px;
+	top: 148px;
+	color: #FFF;
+}
+
+.MSIE .frame3 .picSliderContent {
+	top: 215px;
+}
+
+.frame3 .picSliderContent span {
+	font-size: 16px;
+	color: #FFF;
+	top: 91px;
+	line-height: 12px;
+	text-align: center;
+	width: 100%;
+	height: 20px;
+}
+
+.picFrame.frame4 {
+	width: 150px;
+	box-shadow: 0 4px 15px black;
+	height: 110px;
+	left: 710px;
+	top: 500px;
+}
+
+.frameObj.frame4 {
+	width: 155px;
+	left: -2px;
+	top: -1px;
+}
+
+.frame4 .picFrameMainLink {
+	left: 18px;
+	width: 115px;
+	top: 18px;
+	height: 75px;
+	background: url("../img/RADIO.png") 5px -3px;
+}
+
+.frame4 a span {
+	line-height: 18px;
+	top: 45px;
+	height: 30px;
+}
+
+.frame4 a .picSlider {
+	width: 115px;
+}
+
+.frame4 .picSliderContent {
+	width: 115px;
+	top: 160px;
+}
+
+.picFrame.frame5 {
+	width: 134px;
+	height: 130px;
+	box-shadow: 0 4px 15px black;
+	left: 350px;
+	top: 100px;
+}
+
+.frameObj.frame5 {
+	width: 140px;
+	left: -3px;
+}
+
+.frame5 .picFrameMainLink {
+	left: 11px;
+	width: 112px;
+	top: 10px;
+	height: 110px;
+	background: url("../img/MAILBOX.png") 0 0 no-repeat;
+}
+
+.frame5 a span {
+	line-height: 18px;
+	font-size: 16px;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.5);
+	height: 19px;
+}
+
+.frame5 a .picSlider {
+	width: 112px;
+}
+
+.frame5 .picSliderContent {
+	width: 112px;
+	top: 190px;
+}
+
+.frameObj.frame6 {
+	width: 350px;
+	height: 384px;
+	left: -28px;
+}
+
+.picFrame.frame6 {
+	width: 304px;
+	height: 368px;
+	position: absolute;
+	left: 335px;
+	top: 270px;
+}
+
+.frame6 .picFrameMainLink {
+	border-radius: 119px;
+	width: 236px;
+	margin-left: 0;
+	height: 315px;
+	top: 35px;
+	left: 34px;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+
+
+/*NOTE: Always remember to add these images to the preloader */
+.frame6 .picFrameMainLink.perf1 {
+	background: url("../img/headShots/SteveGronwall.jpg") -41px 3px; /* Main Headshot 1 */
+}
+
+.frame6 .picFrameMainLink.perf2 {
+	background: url("../img/headShots/JamieAmyAnn.jpg") 12px 12px; /* Main Headshot 2 */
+}
+
+
+
+.frame6 .picFrameMainLink.perf1 #perf2 {
+	display: none;
+}
+
+.frame6 .picFrameMainLink.perf2 #perf1 {
+	display: none;
+}
+
+.picFrame.frame6 a span {
+	background: #000;
+	background: rgba(0, 0, 0, 0.5);
+	height: 35px;
+	width: 243px;
+	z-index: 0;
+	line-height: 32px;
+	top: 220px;
+	font-size: 20px;
+}
+
+.picFrame.frame6 a span.sub {
+	font-size: 12px;
+	line-height: 10px;
+	height: 20px;
+	font-family: Corbert;
+}
+
+
+.picFrame.frame6 span.plus {
+	font-size: 32px;
+	text-indent: -18px;
+	line-height: 32px;
+	font-family: SanchezCondensed;
+}
+
+.picFrame.frame6 a .picSlider {
+	background: url(../img/slider-frame6.png) 0 0 no-repeat;
+	width: 235px;
+	height: 600px;
+}
+
+.picFrame.frame6 .picSliderContent {
+	top: 95px;
+	line-height: 20px;
+	width: 228px;
+	text-indent: -10px;
+}
+
+.picFrame .canvasPlaceHolder {
+	background: url("../img/canvasBG.png") 0 0;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 179px;
+	width: 256px;
+	left: 25px;
+	height: 306px;
+	top: 41px;
+	position: absolute;
+	z-index: -1;
+}
+
+.picFrame.frame7 {
+	width: 156px;
+	height: 105px;
+	box-shadow: 0 4px 20px black;
+	left: 105px;
+	top: 360px;
+}
+
+.frameObj.frame7 {
+	width: 165px;
+	left: -4px;
+	top: -4px;
+}
+
+.frame7 .picFrameMainLink {
+	left: 9px;
+	top: 8px;
+	width: 140px;
+	height: 88px;
+	background: url("../img/LETTER.png") 0px 3px;
+}
+
+.frame7 a span {
+	line-height: 18px;
+	top: 70px;
+	height: 19px;
+	background: rgba(0, 0, 0, 0.5);
+	font-size: 16px;
+}
+
+.frame7 a .picSlider {
+	width: 100%;
+}
+
+.frame7 .picSliderContent {
+	width: 100%;
+	top: 140px;
+}
+
+.picFrame.frame8 {
+	width: 214px;
+	height: 137px;
+	box-shadow: 0 4px 12px black;
+	top: 700px;
+	left: 175px;
+}
+
+.frameObj.frame8 {
+	width: 220px;
+	left: -3px;
+	top: -2px;
+}
+
+.frame8 .picFrameMainLink {
+	left: 9px;
+	width: 195px;
+	top: 10px;
+	height: 118px;
+	background: url("../img/TYPEWRITER.png") 0px -73px;
+	font-size: 16px;
+}
+
+.frame8 a span {
+	line-height: 20px;
+	top: 85px;
+	height: 21px;
+	font-size: 18px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.frame8 a .picSlider {
+	width: 100%;
+}
+
+.frame8 .picSliderContent {
+	width: 100%;
+	top: 145px;
+}
+
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+  /****************/
+ /* Social Icons */
+/****************/
+
+.social img {
+	position: relative;
+}
+
+li.social:hover {
+	cursor: pointer;
+}
+
+.social.facebook {
+	width: 41px;
+	height: 72px;
+	right: 240px;
+	top: 340px;
+	box-shadow: 0 4px 18px #000;
+}
+
+.social.facebook:hover {
+	box-shadow: 0 4px 35px rgba(255, 255, 255, 1);
+}
+
+img.facebook {
+	width: 50px;
+	left: -5px;
+	top: -20px;
+}
+
+.social.twitter {
+	width: 48px;
+	height: 53px;
+	right: 175px;
+	top: 366px;
+	box-shadow: 0 -2px 25px rgba(0, 0, 0, 0.71);
+}
+
+.social.twitter:hover {
+	box-shadow: 0 0 60px rgba(255, 255, 255, 1);
+}
+
+img.twitter {
+	top: -42px;
+	left: -21px;
+	width: 92px;
+}
+
+.social.pinterest {
+	width: 47px;
+	height: 56px;
+	right: 110px;
+	top: 359px;
+	box-shadow: 0 0px 20px #000;
+}
+
+.social.pinterest:hover {
+	box-shadow: 0 -6px 60px rgba(255, 255, 255, 1);
+}
+
+img.pinterest {
+	width: 60px;
+	left: -7px;
+	top: -20px;
+}
+
+.social a {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+  /**********************/
+ /*   Props styles     */
+/**********************/
+#propWrapper {
+	position: absolute;
+	top: -27px;
+	left: 50%;
+	width: 980px;
+	margin-left: -490px;
+	height: 100%;
+	pointer-events: none;
+}
+
+#propWrapper img {
+	position: absolute;
+}
+
+#BINOCULARS {
+	right: 0px;
+	top: 728px;
+	width: 185px;
+}
+
+#HAT {
+	left: 0px;
+	width: 150px;
+	top: 718px;
+}
+
+#IRISHBAR {
+	right: 330px;
+	top: 100px;
+	width: 120px;
+	box-shadow: 0 4px 12px black;
+}
+
+#NEWTEAPOT {
+	top: 530px;
+	width: 125px;
+	z-index: 2;
+	left: 172px;
+}
+
+#NOODLES {
+	top: 500px;
+	width: 65px;
+	left: 78px;
+	z-index: 2;
+}
+
+#RICE {
+	top: 605px;
+	width: 60px;
+	left: 130px;
+	z-index: 2;
+}
+
+#NEWDUCK {
+	top: 580px;
+	width: 70px;
+	left: 80px;
+	z-index: 3;
+}
+
+#PEAR1 {
+	left: 570px;
+	width: 55px;
+	top: 31px;
+	z-index: -1;
+}
+
+#PEAR2 {
+	right: 116px;
+	top: 319px;
+	width: 35px;
+	z-index: -1;
+}
+
+#PEAR3 {
+	left: 230px;
+	top: 574px;
+	width: 45px;
+	z-index: 3;
+}
+
+#SHELF1 {
+	top: 440px;
+	right: 82px;
+	width: 235px;
+	z-index: -1;
+}
+
+#SHELF2 {
+	top: 645px;
+	left: 70px;
+	width: 225px;
 }
 
 
@@ -68,8 +754,95 @@ nav {
 
 .mailChimpStatus {
 	width: 100%;
-	height: 200px;
+	height: 50px;
 	color: #ccc;
+	font-family: Corbert;
+	text-align: center;
+}
+
+#mailChimpForm {
+	position: relative;
+}
+
+#mailChimpForm #email{
+	display: block;
+	width: 285px;
+	height: 45px;
+	margin: 0 auto;
+	text-indent: 5px;
+	margin-top: 25px;
+	border-radius: 5px;
+	font-size: 18px;
+	text-align: center;
+	border: 0;
+}
+
+#mailChimpSignUp:hover,
+.contactForm button:hover {
+	cursor: pointer;
+	background: #666;
+}
+
+#mailChimpSignUp {
+	display: block;
+	width: 85px;
+	height: 35px;
+	margin: 0 auto;
+	height: 30px;
+	text-indent: 5px;
+	margin-top: 14px;
+	margin-bottom: 25px;
+	border-radius: 45px;
+	font-family: Corbert;
+	font-size: 16px;
+	border: 0;
+	background: #333;
+	color: #ccc;
+}
+
+#mailChimpForm h1 {
+	color: #fff;
+	font-size: 22px;
+	text-align: center;
+	font-family: SanchezCondensed;
+}
+
+#mailChimpStatus a {
+	color: #fff;
+}
+
+#mailChimpLeftWing,
+#mailChimpRightWing {
+	position: absolute;
+}
+
+#mailChimpForm #mailChimpLeftWing {
+	top: 95px;
+	left: 108px;
+}
+
+#mailChimpForm #mailChimpRightWing {
+	position: absolute;
+	top: 95px;
+	left: 300px;
+}
+
+#contactForm input {
+	border-radius: 3px;
+	padding: 5px;
+	border: 0;
+	font-family: Corbert;
+}
+
+#contactForm #telephoneNumber,
+#contactForm #name{
+	display: inline-block;
+	width: 225px;
+	margin-bottom: 5px;
+}
+
+#contactForm #emailAddress {
+	width: 465px;
 }
 
 .contactForm {
@@ -78,8 +851,31 @@ nav {
 }
 
 .contactForm h2 {
-	margin-top: 0px;
+	margin-top: 0;
 	text-align: center;
+}
+
+.contactForm h2.contactFormSubmitTextHeader {
+	margin-top: 50px;
+	text-align: center;
+	font-family: SanchezCondensed;
+	font-size: 35px;
+}
+
+h2.contactFormSubmitTextHeader.submitError {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.contactFormSubmitText a {
+	color: #fff;
+}
+
+.contactForm .contactFormSubmitText {
+	font-family: Corbert;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
 }
 
 .contactForm input {
@@ -87,19 +883,241 @@ nav {
 	width: 200px;
 }
 
+.contactForm .contactFormSubmitText.submitError span {
+	line-height: 12px;
+	display: block;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
 .contactForm textarea {
 	display: block;
-	min-width: 100%;
+	width: 465px;
+	max-width: 465px;
 	margin-left: 0;
 	min-height: 65px;
 	max-height: 65px;
-	max-width: 100%;
+	border-radius: 3px;
+	padding: 5px;
+	border: 0;
+	font-family: Corbert;
+	margin-top: 4px;
 }
 
 .contactForm button {
-	margin-left: 0;
-	border-radius: 2px;
-	padding: 5px 15px;
-	font-weight: bold;
-	font-size: 14px;
+	display: block;
+	width: 85px;
+	margin: 0 auto;
+	height: 30px;
+	border-radius: 45px;
+	font-family: Corbert;
+	font-size: 16px;
+	border: 0;
+	background: #333;
+	color: #ccc;
+	margin-top: 18px;
+}
+
+.contactForm #mailChimpLeftWing {
+	left: 108px;
+	top: 200px;
+}
+
+.contactForm #mailChimpRightWing {
+	left: 300px;
+	top: 200px;
+}
+
+#nextShowTemplate {
+	height: 695px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	color: #fff;
+}
+
+#nextShowTemplate h1 {
+	font-family: SanchezCondensed;
+	margin-top: 25px;
+	font-size: 40px;
+}
+
+#nextShowTemplate h1,
+#nextShowTemplate h2 {
+	text-align: center;
+}
+
+#nextShowTemplate .showDetails {
+	width: 100%;
+	height: 200px;
+	float: left;
+}
+
+#nextShowTemplate .showDetails span {
+	text-align: center;
+	display: block;
+	font-size: 24px;
+	font-family: Corbert;
+	line-height: 26px;
+}
+
+#nextShowTemplate .showDetails a {
+	color: #fff;
+}
+
+#nextShowTemplate .showDetails a:visited {
+	color: #fff;
+}
+
+#nextShowTemplate .showDetails a:hover {
+	color: rgb(5, 5, 100);
+}
+
+.aboutShowTemplate h1 {
+	font-family: SanchezCondensed;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 40px;
+	color: #fff;
+	margin-left: 15px;
+	line-height: 40px;
+	border-bottom: 1px solid #fff;
+}
+
+.aboutShowTemplate span {
+	color: #fff;
+	padding-left: 15px;
+	display: block;
+	font-family: Corbert;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 15px;
+}
+
+.aboutShowTemplate .aboutPerson img{
+	max-width: 110px;
+	margin-left: 15px;
+}
+
+.aboutShowTemplate .aboutPerson h3 {
+	color: #ccc;
+	font-size: 18px;
+	font-family: Corbert;
+	margin-left: 15px;
+	margin-top: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.aboutShowTemplate .aboutPerson span {
+	display: inline-block;
+	width: 700px;
+	vertical-align: bottom;
+	margin-bottom: 0;
+}
+
+.questionsTemplate {
+	color: #fff;
+}
+
+.questionsTemplate h3 {
+	font-family: SanchezCondensed;
+	border-bottom: 1px solid #fff;
+	font-size: 22px;
+	margin-left: 15px;
+	margin-top: 10px;
+	padding-bottom: 5px;
+}
+
+.questionsTemplate span {
+	color: #fff;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: block;
+	font-family: Corbert;
+	font-size: 16px;
+	line-height: 15px;
+}
+
+.questionsTemplate span.question {
+	font-style: italic;
+}
+
+.videosTemplate {
+	color: #fff;
+}
+
+.videosTemplate h1 {
+	font-family: SanchezCondensed;
+	font-size: 40px;
+	margin-left: 15px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.videosTemplate span {
+	margin-left: 15px;
+	font-size: 18px;
+	font-family: Corbert;
+	text-align: center;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.perfWrapper {
+	display: inline-block;
+	height: 420px;
+}
+
+.perfWrapper span {
+	display: block;
+	padding: 15px;
+	font-family: Corbert;
+}
+
+.perfWrapper img {
+	margin: auto;
+	display: block;
+	max-width: 250px;
+}
+
+.perfWrapper.left {
+	width: 50%;
+	float: left;
+}
+
+.perfWrapper.right {
+	width: 49%;
+	float: right;
+}
+
+  /**********************/
+ /*   Device Queries   */
+/**********************/
+
+/* Smartphones (landscape) ------ */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (landscape) ------------ */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ------------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
 }

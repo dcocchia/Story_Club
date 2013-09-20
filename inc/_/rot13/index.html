@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="rot13.js"></script>
+		<link rel="stylesheet" type="text/css" href="rot13.css">
+	</head>
+	<body>
+
+		<div id="rot13Block">
+			<h3>Convert rot13</h3>
+			<textarea id="text" type="textarea" class="text"></textarea><button id="translatebtn" class="translatebtn">Translate</button>
+
+			<div id="output" class="output"></div>
+		</div>
+
+		<div id="manualShiftBlock">
+			<h3>Caesar Cipher</h3>
+			<div id="shiftByContainer">
+				<h5>Shift By:</h5>
+				<input type="number" id="shiftByNum" placeholder="Number"/>
+			</div>
+			<textarea id="caesarText" type="textarea" class="text"></textarea><button id="caesarTranslatebtn" class="translatebtn">Translate</button>
+
+			<div id="caesarOutputWrapper">
+				<div id="caesarOutput" class="output"></div>
+				<h5 id="shiftKeyHeader">Shift Key:</h5>
+				<div id="shiftKey">			
+				</div>
+			</div>
+		</div>
+
+		<div id="binBlock">
+			<h3>Convert Binary</h3>
+
+			<div id="toFromBinWrapper">
+			
+				<div id="toFromInnerWrapper">
+					<h5>To Binary: </h5>
+					<input type="radio" data-bin="TO" id="shiftByInput" name="shiftByInput" />
+				</div>
+
+				<div id="toFromInnerWrapper">
+					<h5>From Binary: </h5>
+					<input type="radio" data-bin="FROM" data-bin="TO"id="shiftByInput" name="shiftByInput" />
+				</div>
+
+			</div>
+
+			<textarea id="binText" type="textarea" class="text"></textarea><button id="binaryTranslatebtn" class="translatebtn">Translate</button>
+
+			<div id="caesarOutputWrapper">
+				<div id="binOutput" class="output"></div>
+			</div>
+		</div>
+
+	</body>
+</html>

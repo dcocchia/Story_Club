@@ -1,0 +1,533 @@
+/* 
+/ Basic Layout Styles
+/ Dominic Cocchiarella, 2012
+*/
+
+html{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body{
+	margin: 0;
+}
+
+h1{
+	color: #fff;
+}
+
+p{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	border-bottom: 1px solid #fff;
+}
+
+a:link {
+	color:#FFF;
+}
+
+a:visited{
+	color:#FFF;
+}
+
+#mainWrapper{
+	clear: both;
+	position: relative;
+	margin: 0 auto 0 auto;
+}
+
+#bannerWrapper{
+	background-color: #a0c837;
+	height: 61px;
+}
+
+#banner{
+	width: 823px;
+	height: 61px;
+	margin: 0 auto 0 auto;
+	position: relative;
+}
+
+#bannerIcon{
+	background: url(images/nerderyChallenge/logo.png);
+	height: 52px;
+	width: 104px;
+	float: left;
+	position: absolute;
+	top: 9px;
+	z-index: 10;
+}
+
+#bannerSplash{
+	background: url(images/nerderyChallenge/sunBurst_edit.png);
+	height: 61px;
+	background-position: -1px 0;
+	background-repeat: repeat-x;
+	width: 940px;
+	position: absolute;
+	top: 0;
+	right: -125px;
+}
+
+#bannerBiline{
+	background: url(images/nerderyChallenge/banner_biline.png);
+	height: 18px;
+	width: 457px;
+	position: absolute;
+	top: 40px;
+	right: 0;
+}
+
+#searchBar{
+	width: 230px;
+	height: 18px;
+	position: absolute;
+	top: 8px;
+	right: 0;
+	border: 2px solid #00653a;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-ms-border-radius: 8px;
+	border-radius: 8px;
+}
+
+#searchButton{
+	background: #007b47;
+	width: 53px;
+	height: 18px;
+	float: right;
+}
+
+#searchButton:hover{
+	background: url(images/nerderyChallenge/navBttnHover.png);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+#searchBttnText{
+	background: url(images/nerderyChallenge/searchBttnText.png);
+	height: 8px;
+	width: 38px;
+	position: absolute;
+	top: 5px;
+	left: 184px;
+}
+
+#searchBar input{
+	background: white;
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	-o-border-radius: 6px 0 0 6px;
+	-ms-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+	padding: 0;
+	width: 177px;
+	position: absolute;
+	left: 0;
+	height: 18px;
+	border: none;
+	text-indent: 3px;
+}
+
+#mainNavWrapper{
+	background-color: #00653a;
+	height: 58px;
+}
+
+#mainNav{
+	height: 58px;
+	width: 823px;
+	margin: 0 auto 0 auto;
+}
+
+#navLogo{
+	background: url(images/nerderyChallenge/navLogo.png);
+	height: 58px;
+	width: 132px;
+	position: absolute;
+}
+
+#navButtons{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: right;
+}
+
+#navButtons li{
+	border-left: 1px solid #00824c;
+	height: 58px;
+	display: inline-block;
+	margin-right: -4px;
+	zoom: 1; /* ie7 compatability hack*/
+	*display: inline; /* ie7 compatability hack*/
+}
+
+#navButtons li:hover{
+	background: url(images/nerderyChallenge/navBttnHover.png);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+#navButtons a {
+	text-decoration: none;
+	border-bottom: 0;
+	height: 35px;
+	background-repeat: no-repeat;
+}
+
+#navButtons a:visited {
+	text-decoration: none;
+	border-bottom: 0;
+}
+
+.lastNavBttn{
+	border-right: 1px solid #00824c;
+}
+
+.buttonTxt{
+	height: 13px;
+	display: block;
+}
+
+#homeBttnText{
+	background: url(images/nerderyChallenge/homeBttnText.png);
+	width: 34px;
+	background-position: 20px 23px;
+	margin: 0;
+	padding: 22px 20px 0 20px;
+}
+
+#aboutBttnText{
+	background: url(images/nerderyChallenge/aboutBttnText.png);
+	width: 40px;
+	background-position: 20px 23px;
+	margin: 0;
+	padding: 22px 20px 0 20px;
+}
+
+#newsBttnText{
+	background: url(images/nerderyChallenge/newsBttnText.png);
+	width: 33px;
+	background-position: 20px 23px;
+	margin: 0;
+	padding: 22px 20px 0 20px;
+}
+
+#contactBttnText{
+	background: url(images/nerderyChallenge/contactBttnText.png);
+	width: 52px;
+	background-position: 20px 23px;
+	margin: 0;
+	padding: 22px 20px 0 20px;
+}
+
+#contentWrapper_outer{
+	background: url(images/nerderyChallenge/nerd-Background.png);
+}
+
+#contentWrapper_inner{
+	margin: 0 auto 0 auto;
+	width: 823px;
+	padding-top: 20px;
+}
+
+#contentWrapper_inner_about{
+	margin: 0 auto 0 auto;
+	width: 823px;
+}
+
+#topSlider{
+	height: 175px;
+}
+
+.sliderInfo{
+	width: 257px;
+	height: 175px;
+	background: #00A45E;
+	-webkit-border-radius: 15px 0 0 15px;
+	-moz-border-radius: 15px 0 0 15px;
+	-o-border-radius: 15px 0 0 15px;
+	-ms-border-radius: 15px 0 0 15px;
+	border-radius: 15px 0 0 15px;
+	text-align: right;
+	color: #fff;
+	float: left;
+}
+
+.sliderInfo h1{
+	padding: 15px 18px 8px 15px;
+	margin: 0;
+	font-size: 36px;
+}
+
+.sliderInfo h3{
+	padding-right: 39px;
+	font-size: 14px;
+	background: url(images/nerderyChallenge/sliderArrow.png);
+	background-repeat: no-repeat;
+	background-position: 225px 36px;
+	margin-bottom: 20px;
+}
+
+.sliderInfo p{
+	font-style: italic;
+	font-size: 14px;
+	padding: 0 20px 15px 0;
+	width: 204px;
+	float: right;
+}
+
+.sliderCompass{
+	background: url(images/nerderyChallenge/sliderCompassDots.png);
+	height: 10px;
+	width: 42px;
+	display: block;
+	float: right;
+	margin-right: 18px;
+}
+
+#sliderInfo-2{
+	display: none;
+}
+
+#sliderInfo-3{
+	display: none;
+}
+
+.compPos1{
+	background-position: 0 0;
+}
+
+.compPos2{
+	background-position: 0 -10px;
+}
+
+.compPos3{
+	background-position: 0 -20px;
+}
+
+#sliderImageBox{
+	float: right;
+	width: 562px;
+	height: 175px;
+	-webkit-border-radius: 0 15px 15px 0;
+	-moz-border-radius: 0 15px 15px 0;
+	-o-border-radius: 0 15px 15px 0;
+	-ms-border-radius: 0 15px 15px 0;
+	border-radius: 0 15px 15px 0;
+}
+
+.slideIMG1{
+	background: url(images/nerderyChallenge/image-1.png);
+	background-repeat: no-repeat;
+	background-position: -245px 0px;
+	-webkit-transition: background-position 1s ease;
+	-moz-transition: background-position 1s ease;
+	-o-transition: background-position 1s ease;
+	-ms-transition: background-position 1s ease;
+	transition: background-position 1s ease;
+}
+
+.slideIMG2{
+	background: url(images/nerderyChallenge/image-2.png);
+	background-repeat: no-repeat;
+	background-position: -145px 0px;
+	-webkit-transition: background-position 1s ease;
+	-moz-transition: background-position 1s ease;
+	-o-transition: background-position 1s ease;
+	-ms-transition: background-position 1s ease;
+	transition: background-position 1s ease;
+}
+
+.slideIMG3{
+	background: url(images/nerderyChallenge/image-3.png);
+	background-repeat: no-repeat;
+	background-position: -90px 0px;
+	-webkit-transition: background-position 1s ease;
+	-moz-transition: background-position 1s ease;
+	-o-transition: background-position 1s ease;
+	-ms-transition: background-position 1s ease;
+	transition: background-position 1s ease;
+}
+
+#mainContent_home{
+	height: 475px;
+	width: 597px;
+	float: left;
+}
+
+#mainContent_about{
+	height: 475px;
+	width: 375px;
+	float: left;
+	margin-right: 20px;
+}
+
+.sideBar{
+	width: 198px;
+	height: 390px;
+	background: #fff;
+}
+
+.sideBar p{
+	font-size: 11px;
+	padding: 13px;
+	padding-bottom: 0;
+}
+
+.sideBar-left{
+	float: left;
+	margin-right: 20px;
+}
+
+.sideBar-right{
+	float: right;
+}
+
+#footer{
+	width: 823px;
+	margin: 20px 0 20px 0;
+}
+
+#footer p{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	color: #004025;
+}
+
+.infoModule{
+	border: 2px solid #00653a;
+	-webkit-border-radius: 17px;
+	-moz-border-radius: 17px;
+	-o-border-radius: 17px;
+	-ms-border-radius: 17px;
+	border-radius: 17px;
+	margin-top: 20px;
+}
+
+.infoModule h2{
+	color: white;
+	background-color: #00653A;
+	margin: 0;
+	padding: 10px 0 10px 15px;
+	-webkit-border-radius: 12px 12px 0 0;
+	-moz-border-radius: 12px 12px 0 0;
+	-o-border-radius: 12px 12px 0 0;
+	-ms-border-radius: 12px 12px 0 0;
+	border-radius: 12px 12px 0 0;
+	font-size: 20px;
+}
+
+.infoModule ul{
+	background: #00A45E;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 6px 16px;
+}
+
+.infoModule li{
+	padding-right: 5px;
+	display: inline-block;
+	zoom: 1; /*ie7 compatability hack */
+	*display: inline; /*ie7 compatability hack */
+}
+
+.infoModule-inner{
+	background: #fff;
+	width: 100%;
+	-webkit-border-radius: 0 0 17px 17px;
+	-moz-border-radius: 0 0 17px 17px;
+	-o-border-radius: 0 0 17px 17px;
+	-ms-border-radius: 0 0 17px 17px;
+	border-radius: 0 0 17px 17px;
+}
+
+.infoModule-inner h2{
+	background: #fff;
+	color: #00653A;
+	font-size: 16px;
+	padding-left: 20px;
+}
+
+.infoModule-inner h3{
+	padding: 0 0 12px 20px;
+	margin: 0;
+	font-size: 14px;
+	color: #00653a;
+}
+
+.infoModule-inner p{
+	padding: 0 15px 12px 20px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.infoModule-inner ul{
+	padding-left: 20px;
+	background: #fff;
+	-webkit-border-radius: 0 0 17px 17px;
+	-moz-border-radius: 0 0 17px 17px;
+	-o-border-radius: 0 0 17px 17px;
+	-ms-border-radius: 0 0 17px 17px;
+	border-radius: 0 0 17px 17px;
+	font-size: 12px;
+}
+
+.infoModule-inner li{
+	display: block;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	background-image: url(images/nerderyChallenge/listDot.png);
+	background-repeat: no-repeat;
+	background-position: 0px 6px;
+	margin-left: 15px;
+}
+
+.infoModule-inner a{
+	color: #004025;
+	text-decoration: underline;
+}
+
+.infoModule-inner a:visited{
+	color: #004025;
+	text-decoration: underline;
+}
+
+.topModule{
+	margin-top: 0;
+}
+
+.midModule_left{
+	margin: 20px 0 20px 0;
+}
+
+.midModule_right{
+	margin: 20px 0 20px 0;
+}
+
+.line{
+	clear: both;
+	display: block;
+	overflow: hidden;
+	content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+.cell{
+	float: none;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.lastCell{
+	display: table-cell;
+	float: none;
+}

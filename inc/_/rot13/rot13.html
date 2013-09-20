@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="rot13.js"></script>
+	<link rel="stylesheet" type="text/css" href="rot13.css">
+</head>
+<body>
+	<div id="rot13Block">
+		<h3>Convert rot13</h3>
+		<textarea id="text" type="textarea" class="text"></textarea><button id="translatebtn" class="translatebtn">Translate</button>
+
+		<div id="output" class="output"></div>
+	</div>
+	<div id="manualShiftBlock">
+		<h3>Caesar Cipher</h3>
+		<div id="shiftByContainer">
+			<h5>Shift By:</h5>
+			<input type="number" id="shiftByNum" placeholder="Number"/>
+		</div>
+		<textarea id="caesarText" type="textarea" class="text"></textarea><button id="caesarTranslatebtn" class="translatebtn">Translate</button>
+
+		<div id="caesarOutput" class="output"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.icon-facebook {
+	font-size: 50px;
+	color: #3b5998;
+	margin: 0 13px;
+}
+
+.fbSignup a{
+	font-size: 50px;
+	color: #777;
+}
+
+.twitterSignup a {
+	font-size: 50px;
+	color: #777;
+}
+
+.twitterSignup {
+	margin-bottom: 35px;
+}
+
+.icon-twitter {
+	font-size: 50px;
+	color: #00aced;
+}
+
+header h1 {
+	background-image:url('../img/placeHolderBanner.jpg');
+	height: 315px;
+	width: 860px;
+	text-indent: -9999px;
+	margin: 0 auto;
+	direction:ltr;
+}
+header h2{
+	text-indent: -9999px;
+	direction:ltr;
+}
+
+#mc_embed_signup form {
+	padding-left: 10px;
+}
+
+.explanation {
+	font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 1.45;
+	color: #fff;
+	margin-bottom: 40px;
+}
+
+body {
+	background: #bfbfbf;
+}

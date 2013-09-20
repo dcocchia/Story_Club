@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html style="height:100%">
 	<head>
 		<meta charset="utf-8">
 		<title>Story Club Minneapolis</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Story Club" />
+		<meta name="description" content="Take the stage! No judges. No scores. After exploding on Chicago’s live lit scene, Story Club has finally arrived in Minneapolis. The perfect mix of open mic spontaneity with live theater thrills. Featured performers and volunteers get eight minutes to tell a first person narrative. Come and excite your ears!">
 		<meta property="og:title" content="Story Club Minneapolis -- Minneapolis's Premier Open Mic" />
 		<meta property="og:url" content="http://www.storyclubminneapolis.com" />
 		<meta property="og:image" content="" />
@@ -12,7 +13,7 @@
 		<meta property="og:description" content="Take the stage! No judges. No scores. After exploding on Chicago’s live lit scene, Story Club has finally arrived in Minneapolis. The perfect mix of open mic spontaneity with live theater thrills. Featured performers and volunteers get eight minutes to tell a first person narrative. Come and excite your ears!" />
 
 		<!-- Fav and touch icons -->
-		<link rel="shortcut icon" href="assets/ico/favicon.ico">
+		<link rel="shortcut icon" href="img/ico/favicon.ico">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/144.png">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/114.png">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/72.png">
@@ -21,208 +22,313 @@
 		<!-- Styles -->
 		<link href="styles/styles.css" rel="stylesheet">
 		<link href="lib/iLightBox/css/ilightbox.css" rel="stylesheet">
-	</head>
-	<body>
 
-   		<nav>
+		<!-- JS that needs to be loaded immediately loaded here. All others at end of body for speed. -->
+		<script src="lib/spin.min.js"></script>
+		<script src="js/preloadImg.js" ></script>
+		<script src="lib/html5shiv.js"></script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-42540238-1', 'storyclubminneapolis.com');
+			ga('send', 'pageview');
+
+		</script>
+	</head>
+	<body style="background-color: #cc9900; sheight:100%;">
+
+		<header>
+			<h2>
+				Story Club Minneapolis
+				<img src="" />
+			</h2>
+		</header>
+
+   		<nav id ="nav" style="display:none">
    			<ul id="picFrameWrapper">
-	   			<li class="picFrame">
-	   				<a href="img/image.jpg" id="ilightbox" class="picFrameMainLink">
-	   					<span>Single Image</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						This is going to be a single image!
+	   			<li class="picFrame frame6">
+	   				<img src="img/frames/FRAME6.png" class="frameObj frame6" />
+	   				<a href="#" id="mainPerfs" class="picFrameMainLink perf1">
+	   					<span id="perf1" class="">Steve Gronwall</span>
+	   					<span id="perf2" class="">Jamie Amy Ann</span>
+						<span class="sub">Featured Performer</span>
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						<span>Jamie Amy Ann</span>
+			   						<span class="plus">&</span>
+			   						<span>Steve Gronwall</span>
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
+	   				</a>
+	   				<span class="canvasPlaceHolder"></span>
+	   			</li>
+	   			<li class="picFrame frame1">
+	   				<img src="img/frames/FRAME1.png" class="frameObj frame1" />
+	   				<a href="#" id="nextShow" class="picFrameMainLink" >
+	   					<span class="nextShow header">Next Show</span>
+	   					<span class="nextShow thurs">Thursday</span>
+	   					<span class="nextShow date"><sup class="topNum">9</sup><span class="dateSlash">&frasl;</span><sub>12</sub></span>
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						Second Thursday of the Month
+			   						<span>September 12th, 2013</span>
+			   					</div>
+		   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="#" id="vertGroup" class="picFrameMainLink" >
-	   					<span>Vertical Group</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						These Photos are vertical!
+	   			<li class="picFrame frame2">
+	   			<img src="img/frames/FRAME2.png" class="frameObj frame2" />
+	   				<a href="#" id="photoFrame" class="picFrameMainLink">
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						Pretend you're there with us through these hot pics!
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="#" id="horGroup" class="picFrameMainLink">
-	   					<span>Horizontal Group</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						These photos are horizontal!
+	   			<li class="picFrame frame3">
+	   				<img src="img/frames/FRAME3.png" class="frameObj frame3" />
+	   				<a href="#" id = "questions" class="ilightbox picFrameMainLink">
+	   					<span>?</span>
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						What's this all about?
+			   						<span>FAQs</span>
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
+	   				</a>
+	   			</li> 
+	   			<li class="picFrame frame4">
+	   				<img src="img/frames/FRAME4.png" class="frameObj frame4" />
+	   				<a href="#" id = "videos" class="ilightbox picFrameMainLink" >
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						Watch some videos, listen to some podcasts!
+			   					</div>
+		   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.youtube.com/watch?v=W8CrLpMJ4l8"
-						id = "youTubeVid"
-						class="ilightbox picFrameMainLink"
-						data-type="iframe"
-						data-options="smartRecognition: true, thumbnail: '/img/youtube.jpg'">
-	   					<span>Youtube Video</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						This is a classy ass YouTube Video!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://vimeo.com/46141955"
-						id = "vimeoVid"
-						class="ilightbox picFrameMainLink"
-						data-type="iframe"
-						data-options="smartRecognition: true">
-	   					<span>Vimdeo Video</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						This snooty Vimeo video just outdid that YouTube Video!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
+	   			<li class="picFrame frame5">
+	   				<img src="img/frames/FRAME5.png" class="frameObj frame5" />
 	   				<a href="#mailChimpForm" id="newsLetterFrame" class="picFrameMainLink" data-type="inline">
-	   					<span>NewsLetter!</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Sign up for the goddamn newsletter!
+	   					<span>Newsletter</span>
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						Keep up with what's going down!
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
+	   			<li class="picFrame frame7">
+	   				<img src="img/frames/FRAME7.png" class="frameObj frame7" />
 	   				<a href="#contactForm" id="contactFormFrame" class="picFrameMainLink" data-type="inline">
 	   					<span>Contact Us</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Want to get in contact? Here's where you do that. 
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   					 	Let us know what you think! 
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
+	   			<li class="picFrame frame8">
+	   				<img src="img/frames/FRAME8.png" class="frameObj frame8" />
+	   				<a href="#" id="aboutShow" class="picFrameMainLink">
+	   					<span>About StoryClub</span>
+	   					<div class="picSliderWrapper">
+		   					<div class="picSlider">
+		   						<div class="picSliderContent">
+			   						Find out why Story Club is so cool.
+			   						
+			   					</div>
 		   					</div>
-	   					</div>
+		   				</div>
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
+	   			
+	   			<li class="picFrame social facebook">
+	   				<img src="img/social/FACEBOOK.png" class="facebook" />
+	   				<a href="https://www.facebook.com/StoryClubMinneapolis" target="_blank">
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
+	   			<li class="picFrame social twitter">
+	   				<img src="img/social/TWITTER.png" class="twitter" />
+	   				<a href="https://twitter.com/StoryClubMN" target="_blank">
 	   				</a>
 	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   				   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
-	   				</a>
-	   			</li>
-	   			<li class="picFrame">
-	   				<a href="http://www.google.com" class="picFrameMainLink">
-	   					<span>Test Frame</span>
-	   					<div class="picSlider">
-	   						<div class="picSliderContent">
-		   						Some Content!
-		   						Some Other Content!
-		   					</div>
-	   					</div>
+	   			<li class="picFrame social pinterest">
+	   				<img src="img/social/PINTEREST.png" class="pinterest" />
+	   				<a href="http://pinterest.com/sminneapolis/" target="_blank">
 	   				</a>
 	   			</li>
 	   		</ul>
+	   		<div id="propWrapper" style="display:none">
+   			<img id="BINOCULARS" src="img/props/BINOCULARS.png" />
+   			<img id="HAT" src="img/props/HAT.png" />
+   			<img id="IRISHBAR" src="img/props/IRISHBAR.png" />
+   			<img id="NEWDUCK" src="img/props/NEWDUCK.png" />
+   			<img id="NEWTEAPOT" src="img/props/NEWTEAPOT.png" />
+   			<img id="NOODLES" src="img/props/NOODLES.png" />
+   			<img id="PEAR1" src="img/props/PEAR1.png" />
+   			<img id="PEAR2" src="img/props/PEAR2.png" />
+   			<img id="PEAR3" src="img/props/PEAR3.png" />
+   			<img id="RICE" src="img/props/RICE.png" />
+   			<img id="SHELF1" src="img/props/SHELF1.png" />
+   			<img id="SHELF2" src="img/props/SHELF2.png" />
+   		</div>
    		</nav>
 
    		<!-- Templates for inline lightbox content -->
    		<div id ="mailChimpForm" style="display:none">
-   			<button id="mailChimpSignUp">Signup!</button>
-   			<input id="email" type='email' placeholder="Your Email Address" class="checkMe"/>
+   			<h1>Sign up for our satisfyingly quirky newsletter!</h1>
+   			<input id="email" type='email' placeholder="Email Address" class="checkMe"/>
+   			<button id="mailChimpSignUp">Partake</button>
    			<div id="mailChimpStatus" class="mailChimpStatus"></div>
+   			<img id="mailChimpLeftWing" src="img/wingLeftLight.png" />
+	   		<img id="mailChimpRightWing" src="img/wingRightLight.png" />
    		</div>
 
    		<div id="contactForm" style="display:none" class="contactForm">
-   			<h2>Contact Us!</h2>
+   			<h2>Tell us what's on your mind!</h2>
    			<form>
-	   			<input id="name" type="text" placeholder="Your Name" class="checkMe"/>
-	   			<input id="emailAddress" type="email" placeholder="Your Email Address" class="checkMe"/>
-	   			<input id="telephoneNumber" type="tel" placeholder="Your Telephone Number (Optional)" class=""/>
+	   			<input id="name" type="text" placeholder="Name" class="checkMe"/>
+	   			<input id="telephoneNumber" type="tel" placeholder="Telephone Number (Optional)" class=""/>
+	   			<input id="emailAddress" type="email" placeholder="Email Address" class="checkMe"/>
 	   			<textarea  id="message" type="text" placeholder="Your Awesome Message" class="checkMe"></textarea>
-	   			<button id ="submitContactForm">Submit</button>
+	   			<button id ="submitContactForm">Bestow</button>
+	   			<img id="mailChimpLeftWing" src="img/wingLeftLight.png" />
+	   			<img id="mailChimpRightWing" src="img/wingRightLight.png" />
    			</form>
    		</div>
+
+   		<div id="nextShowTemplate" style="display:none" class="nextShowTemplate">
+   			<h1>Next Show</h1>
+   			<div class="perfWrapper left">
+   				<h2>Jamie Amy Ann</h2>
+   				<span>Jamie Amy Ann is a local filmmaker and playwright. She's never worn high heels in her life and she has an unusual obsession with Settlers of Catan.</span>
+   				<img src="img/headShots/JamieAmyAnn.jpg"/>
+   			</div>
+   			<div class="perfWrapper right">
+   				<h2>Steve Gronwall</h2>
+   				<span>Steve Gronwall was the Emcee at the Comedy Caboose for over 12 years and has been entertaining his kids for over 35!</span>
+   				<img src="img/headShots/SteveGronwall.jpg"/>
+   			</div>
+   			<div class="showDetails">
+   				<h1>Thursday, September 12th, 2013</h1>
+   				<h2>7:00 PM</h2>
+   				<span><a href="http://bryantlakebowl.com/" target="_blank">Bryant Lake Bowl</a></span>
+   				<a href="https://maps.google.com/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=5389449810521333560&q=Bryant-Lake+Bowl&iwloc=A&gl=US&hl=en" target="_blank">
+   					<span>810 W Lake St</span>
+   					<span>Minneapolis, MN 55408</span>
+   				</a>
+   			</div>
+   		</div>
+
+   		<div id="aboutShowTemplate" style="display:none" class="aboutShowTemplate">
+   			<h1>The Rules</h1>
+   			<span>Minneapolis’s Premier Open Mic, Story Club mixes the spontaneity of an open mic with the experience of live theater. We are a live forum where writers & performers can display their first-person storytelling prowess, fiction or nonfiction, memorized or read from the page.</span>
+   			<span>We give you a mic and 8 minutes. You tell us a story. </span>
+   			<h1>The Rule Keepers</h1>
+   			<div class="aboutPerson">
+   				<img src="img/headShots/bioShotMimi.png"/>
+   				<span>Mimi Nguyen is the producer and host of Story Club Minneapolis. She was once labeled The Spirit of State Fair and has an obsession with deep fried cheese curds. She and Story Club go way back, all the way back to Chicago of 2009 when Story Club founder Dana Norris spotted her in a crowd of dazed and confused twenty-somethings.</span>
+   				<h3>Mimi Nguyen</h3>
+   			</div>
+   			<div class="aboutPerson">
+   				<img src="img/headShots/bioShotDom.png"/>
+   				<span>Dominic Cocchiarella is a co-producer and web developer for Story Club Minneapolis. He can speak English and 5 programming languages, if anyone cares. (We don't) He writes fiction and designs video games. Ask him about driverless cars and grab a Snickers. You're going to be there a while.</span>
+   				<h3>Dominic Cocchiarella</h3>
+   			</div>
+   			<div class="aboutPerson">
+   				<img src="img/headShots/bioShotJamie.png"/>
+   				<span>Jamie Amy Ann is the Artistic Director for Story Club. You can thank her for all the style around here. She's also a local filmmaker and playwright. She's never worn high heels in her life and she has an unusual obsession with Settlers of Catan.</span>
+   				<h3>Jamie Amy Ann</h3>
+   			</div>
+   		</div>
+
+   		<div id="questionsTemplate" style="display:none" class="questionsTemplate">
+   			<h3>Open Mic</h3>
+
+			<span>We have at least three open mic slots at each show (more if time allows).</span>
+			<br>
+			<span>Open Mic participants sign up before the show and are chosen via raffle live during the show. Each performer has 8 minutes to do their thing on stage.  Once the timer goes off, the story is over.</span> 
+			<br> 
+			<span>We recommend telling first-person stories.  The best stories quickly tell us where the story is taking place, who it involves, and what's at stake.</span> 
+			<br> 
+			<span>Story Club loves having new storytellers on stage.  We encourage everyone to sign up and show off what they've got!</span> 
+			<br>
+
+			<h3>Featured Performances</h3>
+
+			<span>Featured performances are curated exclusively for each show by the Story Club team.</span>
+			<br> 
+			<span>Featured Performers provide drafts of their stories, and work with our producers to refine their tales.</span>
+			<br> 
+			<span>Want to be a featured performer?  We're always looking for intriguing, first-person stories to bring on stage.  Email us your story today.</span> 
+			<br>
+
+			<h3>FAQ</h3>
+
+			<span class="question">1. What is Story Club?</span> 
+			<br>
+			<span>Story Club is like <b>Fight Club</b>.  Except everyone tells stories instead of punching each other in the face. And everyone talks about Story Club.  Everyone.</span> 
+			<br>
+			<span class="question" >2. When does Story Club meet? </span> 
+			<br>
+			<span>Show starts at 7pm at Bryant Lake Bowl Theater every second Thursday of the month. Come early for drinks, foods, and the chance at an open mic slot!</span> 
+			<br>
+			<span class="question" >3. Where is Bryant Lake Bowl?</span> 
+			<br>
+			<span>Bryant Lake Bowl is located on the corner of – you guessed it – Bryant Ave South and W Lake St. The address is 810 W Lake St, Minneapolis, MN 55408. It’s just a few blocks from Interstate 94 W and I-35W.</span> 
+			<br>
+			<span class="question" >4.  Who can join Story Club?</span> 
+			<br>
+			<span>Anyone!  Storytellers can sign up for an open mic slot before the show (6:30pm) and submit a piece of writing to be one of our featured performers.</span> 
+			<br>
+			<span class="question" >5.  How much does it cost?</span> 
+			<br>
+			<span>Shows are $6-12 on a sliding scale, meaning give what you can between those two numbers. </span> 
+			<br>
+			<span class="question" >6. What kind of stories are told at Story Club? </span> 
+			<br>
+			<span>We accept first person stories of fiction or nonfiction.  Open mic slots run a max of 8 minutes (about 1300 words). </span> 
+			<br>
+			<span class="question" >6. What if it's my first time performing?</span> 
+			<br>
+			<span>Awesome!  We love having new performers at Story Club.</span> 
+			<br>
+			<span>We pride ourselves in being the perfect venue for many writers to use as their first performance space.  You will get a microphone, a music stand for your pages, a stool (if you want to sit), and a timer.  You'll also get one of the most attentive, welcoming audiences in Minneapolis.</span> 
+
+
+   		</div>
+
+   		<div id="videosTemplate" style="display:none" class="videosTemplate">
+   			<h1>This is sort of awkward...</h1>
+   			<span>It looks like we don't have any videos or podcasts yet.</span>
+   			<span>Whoops! I bet we have some soon, though.</span>
+   		</div>
+
+   		<!-- Sometimes we need svg shapes -->
+   		<clipPath id="frame6">
+			<ellipse cx="284" cy="213" rx="284" ry="213"></ellipse>
+		</clipPath>
 
 		<!-- Javascript at end of body for faster page loads, ya'll -->
 		<script src="lib/jquery-2.0.3.min.js"></script>
@@ -230,17 +336,5 @@
 		<script src="lib/iLightBox/js/ilightbox.packed.js"></script>
 		<script src="lib/iLightBox/js/jquery.mousewheel.js"></script>
 		<script src="js/storyClub.js"></script>
-
-		<script>
-		//googlee analytics script -- disabling for now
-		  // (function(i,s,o,g,r,a,m){i['googleeAnalyticsObject']=r;i[r]=i[r]||function(){
-		  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  // })(window,document,'script','//www.googlee-analytics.com/analytics.js','ga');
-
-		  // ga('create', 'UA-42540238-1', 'storyclubminneapolis.com');
-		  // ga('send', 'pageview');
-
-		</script>
 	</body>
 </html>

@@ -58,6 +58,6 @@ $headers = 'From: '.$name."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
-	echo '{"success":"yes","msg":"Your email has been sent! We\'ll get back to you as soon as we can."}';
+	echo '{"success":"yes","msg":"Your email has been sent! <br>We\'ll get back to you as soon as we can."}';
 }
 ?>
