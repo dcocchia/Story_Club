@@ -158,6 +158,17 @@ var StoryClub = (function ($) {
 			event.preventDefault();
 			 
 			$.iLightBox([
+				{ url: 'img/showScenes/showScene (10).jpg' },
+				{ url: 'img/showScenes/showScene (11).jpg' },
+				{ url: 'img/showScenes/showScene (12).jpg' },
+				{ url: 'img/showScenes/showScene (13).jpg' },
+				{ url: 'img/showScenes/showScene (14).jpg' },
+				{ url: 'img/showScenes/showScene (15).jpg' },
+				{ url: 'img/showScenes/showScene (16).jpg' },
+				{ url: 'img/showScenes/showScene (17).jpg' },
+				{ url: 'img/showScenes/showScene (18).jpg' },
+				{ url: 'img/showScenes/showScene (19).jpg' },
+				{ url: 'img/showScenes/showScene (20).jpg' },
 				{ url: 'img/showScenes/showScene (1).jpg' },
 				{ url: 'img/showScenes/showScene (4).jpg' },
 				{ url: 'img/showScenes/showScene (6).jpg' },
