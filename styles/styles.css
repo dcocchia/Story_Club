@@ -414,11 +414,15 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/SteveGronwall.jpg") -41px 3px; /* Main Headshot 1 */
+	background: url("../img/headShots/AnnaHurley.jpg") -33px -35px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/JamieAmyAnn.jpg") 12px 12px; /* Main Headshot 2 */
+	background: url("../img/headShots/JayGabler.jpg") -12px 16px; /* Main Headshot 2 */
+}
+
+.frame6 .picFrameMainLink.perf3 {
+	background: url("../img/headShots/TamaraDeLand.jpg") -55px 10px; /* Main Headshot 3 -- Rarely used. */
 }
 
 
@@ -427,7 +431,21 @@ sup.topNum {
 	display: none;
 }
 
+.frame6 .picFrameMainLink.perf1 #perf3 {
+	display: none;
+}
+
 .frame6 .picFrameMainLink.perf2 #perf1 {
+	display: none;
+}
+.frame6 .picFrameMainLink.perf2 #perf3 {
+	display: none;
+}
+
+.frame6 .picFrameMainLink.perf3 #perf1 {
+	display: none;
+}
+.frame6 .picFrameMainLink.perf3 #perf2 {
 	display: none;
 }
 
@@ -468,6 +486,10 @@ sup.topNum {
 	line-height: 20px;
 	width: 228px;
 	text-indent: -10px;
+}
+
+.picFrame.frame6 .picSliderContent.threePerfs {
+	top: 50px;
 }
 
 .picFrame .canvasPlaceHolder {
@@ -805,6 +827,7 @@ img.pinterest {
 	font-size: 22px;
 	text-align: center;
 	font-family: SanchezCondensed;
+	line-height: 22px;
 }
 
 #mailChimpStatus a {
@@ -1065,13 +1088,25 @@ h2.contactFormSubmitTextHeader.submitError {
 
 .perfWrapper {
 	display: inline-block;
-	height: 420px;
+	height: 445px;
 }
 
 .perfWrapper span {
 	display: block;
 	padding: 15px;
 	font-family: Corbert;
+}
+
+.perfWrapper span.longDesc {
+
+}
+
+.perfWrapper span.longDesc.long {
+	padding-bottom: 94px;
+}
+
+.perfWrapper span.longDesc.med {
+	padding-bottom: 78px;
 }
 
 .perfWrapper img {
@@ -1085,25 +1120,197 @@ h2.contactFormSubmitTextHeader.submitError {
 	float: left;
 }
 
+.perfWrapper.left.threePerfs {
+	width: 33%;
+}
+
 .perfWrapper.right {
 	width: 49%;
 	float: right;
+}
+
+.perfWrapper.right.threePerfs {
+	width: 32%
 }
 
   /**********************/
  /*   Device Queries   */
 /**********************/
 
-/* Smartphones (landscape) ------ */
+/* Smartphones ------- */
 @media only screen 
-and (min-width : 321px) {
+and (max-width : 520px) {
 /* Styles */
+	header h2 {
+		background-size: 100%;
+		background-repeat: no-repeat;
+		max-width: 100%;
+		height: 150px
+	}
+
+	nav {
+		max-width: 100%;
+	}
+
+	nav ul {
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.picFrame {
+		display: block;
+		left: 0 !important;
+		top: 0 !important;
+		margin: 0 auto;
+		position: inherit !important;
+		margin-bottom: 25px;
+	}
+
+	.picFrame.social {
+		display: inline-block;
+		margin-top: 30px;
+		margin-right: 10px;
+	}
+
+	.picFrame.social.facebook {
+		margin-left: 25%;
+	}
+
+	.frameObj.frame6 {
+		max-width: 320px;
+		left: -15px;
+	}
+
+	.picFrame.frame6 a {
+		width: 215px;
+		left: 42px;
+	}
+
+	.picFrame.frame6 a span {
+		width: 215px;
+	}
+
+	.picFrame.frame6 a .picSlider {
+		width: 215px;
+	}
+
+	.picFrame .canvasPlaceHolder { 
+		width: 220px;
+		left: 40px;
+	}
+
+	#propWrapper {
+		display: none !important;
+	}
+
+	#mailChimpForm #mailChimpLeftWing,
+	#mailChimpForm #mailChimpRightWing,
+	.contactForm #mailChimpLeftWing,
+	.contactForm #mailChimpRightWing {
+		display: none;
+	}
+
+	.contactForm textarea,
+	#contactForm #emailAddress {
+		width: 100%;
+	}
+
+	.aboutShowTemplate .aboutPerson span { 
+		width: 90%;
+	}
+
+	.aboutShowTemplate h1 { 
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	.aboutShowTemplate span { 
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	.perfWrapper { 
+		height: initial;
+		border-bottom: 2px dashed #fff;
+		padding-bottom: 10px;
+	}
+
+	.perfWrapper.left,
+	.perfWrapper.right {
+		float: inherit;
+	}
+
+	.perfWrapper.left.threePerfs,
+	.perfWrapper.right.threePerfs { 
+		width: 100%
+	}
+
+	#aboutShowTemplate,
+	#nextShowTemplate,
+	#questionsTemplate,
+	#videosTemplate {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.ilightbox-holder .ilightbox-wrapper {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	#nextShowTemplate { 
+		overflow: initial;
+		position: relative;
+	}
+
+	#nextShowTemplate h1 { 
+		line-height: 40px
+	}
+
+	.perfWrapper span.longDesc.med,
+	.perfWrapper span.longDesc.long,
+	.perfWrapper span.longDesc.small {
+		padding-bottom: 5px;
+	}
+
+	#nextShowTemplate .showDetails { 
+		position: absolute;
+		top: 0;
+		border-bottom: 2px dashed #fff;
+		height: 300px;
+	}
+
+	#nextShowTemplate h1.nextShowTop {
+		padding-top: 310px;
+		margin-top: 5px;
+	}
+
 }
 
-/* Smartphones (portrait) ------- */
+/* Smartphones (landscape) ------ */
 @media only screen 
-and (max-width : 320px) {
+and (min-width : 380px) and (max-width : 520px){
 /* Styles */
+	header h2 {
+		height: 200px
+	}
+
+	.frameObj.frame6 {
+		width: 350px;
+		max-width: 350px
+	}
+
+	.picFrame.frame6 a { 
+		width: 236px;
+		left: 48px;
+	}
+
+	.picFrame.frame6 a span { 
+		width: 243px;
+	}
+
+	.picFrame .canvasPlaceHolder { 
+		width: 235px;
+		left: 45px;
+	}
 }
 
 /* iPads (landscape) ------------ */

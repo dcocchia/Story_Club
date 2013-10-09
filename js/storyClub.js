@@ -6,11 +6,24 @@
 // Module style keeps gobal scope clean
 var StoryClub = (function ($) {
 	var storyClub = {}; //exported global var
+	var threePerformers = true; //special logic throughout for when we have 3 features
 
 	var loadingSpinner,
 		headShotTimer,
-		currentPerf = (Math.floor(Math.random() * 2) + 1).toString(), //choose at random
-		waitingPerf = (currentPerf === "1") ? "2" : "1"; //if 1 this will be 2 and vice versa
+		currentPerf,
+		waitingPerf,
+		windowWidth = $(window).width();
+
+		if (!threePerformers) {
+			currentPerf = (Math.floor(Math.random() * 2) + 1).toString(), //choose at random
+			waitingPerf = (currentPerf === "1") ? "2" : "1"; //if 1 this will be 2 and vice versa
+		} else {
+			var perfArray = ['1', '2', '3'];
+			
+			currentPerf = (Math.floor(Math.random() * 3) + 1).toString(); //choose at random
+			perfArray.splice(perfArray.indexOf(currentPerf), 1); //remove chosen perf from possible waiting perf
+			waitingPerf = perfArray[Math.floor(Math.random()*perfArray.length)]; //choose from the array
+		}
 
 	storyClub.initSpinner = function() {
 		var	opts = {
@@ -46,6 +59,18 @@ var StoryClub = (function ($) {
 		loadingSpinner.stop();
 	}
 
+	storyClub.bindWindowEvents = function() {
+		if (window.addEventListener) {
+			 window.addEventListener("orientationchange", function() { //if using a ios device, reset widths on orientation change 
+				windowWidth = $(window).width();
+			}, false);
+		}
+
+		$(window).resize(function() {
+			windowWidth = $(window).width();
+		});
+	}
+
 	storyClub.showImages = function() {
 		$("#nav").fadeIn('slow');
 		$("#propWrapper").fadeIn('slow');
@@ -54,7 +79,7 @@ var StoryClub = (function ($) {
 	storyClub.initHeadShotCycle = function() {
 		var $this = $(".frame6 .picFrameMainLink");
 
-		$this.removeClass("perf1 perf2").addClass("perf" + currentPerf); //assign random headshot
+		$this.removeClass("perf1 perf2 perf3").addClass("perf" + currentPerf); //assign random headshot
 
 		storyClub.startHeadShotCycle();
 	}
@@ -69,6 +94,20 @@ var StoryClub = (function ($) {
 			    	$(this).removeClass("perf" + currentPerf).addClass("perf" + waitingPerf).fadeIn();
 				});
 
+			}
+
+			if (threePerformers) {
+				cycle = function() {
+					var perfArray = ['1', '2', '3'];
+			
+					perfArray.splice(perfArray.indexOf(currentPerf), 1); //remove chosen perf from possible waiting perf
+					waitingPerf = perfArray[Math.floor(Math.random()*perfArray.length)]; //choose from the array
+
+					$(".perf" + currentPerf).fadeOut(function() {
+			    		$(this).removeClass("perf" + currentPerf).addClass("perf" + waitingPerf).fadeIn();
+			    		currentPerf = waitingPerf;
+					});
+				}
 			}
 
 		//very 5 seconds, change to other headshot
@@ -132,13 +171,21 @@ var StoryClub = (function ($) {
 		$("#newsLetterFrame").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 500,
+				frameHeight = 250;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#mailChimpForm",
 					type:"inline",
 					options: {
-						width: 500,
-						height: 250,
+						width: frameWidth,
+						height: frameHeight,
 						onRender: storyClub.instateMailChimpForm
 					}
 				}
@@ -149,13 +196,22 @@ var StoryClub = (function ($) {
 		$("#contactFormFrame").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 500,
+				frameHeight = 250;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "75%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#contactForm",
 					type:"inline",
 					options: {
-						width: 500,
-						height: 250,
+						width: frameWidth,
+						height: frameHeight,
 						onRender: storyClub.instateContactForm
 					}
 				}
@@ -165,14 +221,22 @@ var StoryClub = (function ($) {
 		$("#nextShow").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 900,
+				frameHeight = 700;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "75%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#nextShowTemplate",
 					type:"inline",
 					options: {
-						width: 900,
-						height: 700
-						//onRender: storyClub.instateContactForm
+						width: frameWidth,
+						height: frameHeight
 					}
 				}
 			]);
@@ -181,14 +245,22 @@ var StoryClub = (function ($) {
 		$("#mainPerfs").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 900,
+				frameHeight = 700;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "75%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#nextShowTemplate",
 					type:"inline",
 					options: {
-						width: 900,
-						height: 700
-						//onRender: storyClub.instateContactForm
+						width: frameWidth,
+						height: frameHeight
 					}
 				}
 			]);
@@ -197,14 +269,22 @@ var StoryClub = (function ($) {
 		$("#aboutShow").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 900,
+				frameHeight = 700;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "90%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#aboutShowTemplate",
 					type:"inline",
 					options: {
-						width: 900,
-						height: 700
-						//onRender: storyClub.instateContactForm
+						width: frameWidth,
+						height: frameHeight
 					}
 				}
 			]);
@@ -213,14 +293,22 @@ var StoryClub = (function ($) {
 		$("#questions").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 900,
+				frameHeight = 700;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "85%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#questionsTemplate",
 					type:"inline",
 					options: {
-						width: 900,
-						height: 700
-						//onRender: storyClub.instateContactForm
+						width: frameWidth,
+						height: frameHeight
 					}
 				}
 			]);
@@ -229,14 +317,22 @@ var StoryClub = (function ($) {
 		$("#videos").click( function(e) {
 			e.preventDefault();
 
+			var frameWidth = 700,
+				frameHeight = 125;
+
+
+			if (windowWidth < 500) {
+				frameWidth = "100%";
+				frameHeight = "50%";
+			}
+
 			$.iLightBox([
 				{
 					URL:"#videosTemplate",
 					type:"inline",
 					options: {
-						width: 700,
-						height: 125
-						//onRender: storyClub.instateContactForm
+						width: frameWidth,
+						height: frameHeight
 					}
 				}
 			]);
@@ -369,6 +465,7 @@ var StoryClub = (function ($) {
 }(jQuery));
 
 $(document).ready(function() {
+	StoryClub.bindWindowEvents();
 	StoryClub.bindPicEvents();
 	StoryClub.bindLightBoxEvents();
 	StoryClub.initHeadShotCycle();
