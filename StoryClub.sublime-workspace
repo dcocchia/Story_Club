@@ -1,0 +1,519 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"next",
+				"nextShowTemplate"
+			],
+			[
+				"frame",
+				"frameHeight"
+			],
+			[
+				"pic",
+				"picFrame"
+			],
+			[
+				"paddig",
+				"padding-top"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"ab",
+				"aboutPerson"
+			],
+			[
+				"about",
+				"aboutShowTemplate"
+			],
+			[
+				"abou",
+				"aboutShowTemplate"
+			],
+			[
+				"perf",
+				"perfWrapper"
+			],
+			[
+				"mai",
+				"mailChimpLeftWing"
+			],
+			[
+				"sto",
+				"storyClub"
+			],
+			[
+				"pe",
+				"perf2"
+			],
+			[
+				"fr",
+				"frame6"
+			],
+			[
+				"pics",
+				"picSliderContent"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"picfra",
+				"picFrame"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"fra",
+				"frame7"
+			],
+			[
+				"picfram",
+				"picFrameMainLink"
+			],
+			[
+				"st",
+				"storyClub"
+			],
+			[
+				"picSlider",
+				"picSliderContent"
+			],
+			[
+				"picSl",
+				"picSlider"
+			],
+			[
+				"pi",
+				"picFrame"
+			],
+			[
+				"fre",
+				"frame6Top"
+			],
+			[
+				"defa",
+				"defaultFrameTop"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pars",
+				"parsedData"
+			],
+			[
+				"va",
+				"validateEmail"
+			],
+			[
+				"ver",
+				"verifyForm"
+			],
+			[
+				"email",
+				"emailAddress"
+			],
+			[
+				"par",
+				"parsedData"
+			],
+			[
+				"sub",
+				"subscribeError"
+			],
+			[
+				"ajax",
+				"ajaxSettings"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"St",
+				"StoryClub"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/storyClub.js",
+			"settings":
+			{
+				"buffer_size": 13163,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styles/styles.css",
+			"settings":
+			{
+				"buffer_size": 20039,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 17359,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/jquery-1.10.2.min.js",
+			"settings":
+			{
+				"buffer_size": 93107,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/preloadImg.js",
+			"settings":
+			{
+				"buffer_size": 3657,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Dominic/AppData/Local/Temp/Temp1_balupton-jquery-scrollto-a30313e.zip/balupton-jquery-scrollto-a30313e/lib/jquery-scrollto.js",
+		"/C/Users/Dominic/Blue_Ox/css/placeHolderStyle.css",
+		"/C/Users/Dominic/Story_Club/styles/styles.css",
+		"/C/Users/Dominic/Story_Club/js/storyClub.js",
+		"/C/Users/Dominic/Story_Club/realSite.html",
+		"/C/Users/Dominic/Story_Club/index.html",
+		"/C/Users/Dominic/Desktop/mcapi-simple-subscribe-jquery/js/mailing-list.js",
+		"/C/Users/Dominic/Desktop/README",
+		"/C/Users/Dominic/Desktop/MCAPI.class.php",
+		"/C/Users/Dominic/Desktop/mcapi-simple-subscribe-jquery/inc/store-address.php",
+		"/C/Users/Dominic/Story_Club/inc/MCAPI.class.php",
+		"/C/Users/Dominic/Desktop/mcapi_listSubscribe.php",
+		"/C/Users/Dominic/Desktop/config.inc.php",
+		"/C/Users/Dominic/Story_Club/documentation.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"indexOf",
+			"anna",
+			"annay",
+			"height",
+			"thursday",
+			"nextShow",
+			"Jamie",
+			"next",
+			"nextShowTe",
+			"about",
+			"			\n",
+			"canvas",
+			"image",
+			".map",
+			"absolute",
+			"shiv",
+			"img/F",
+			": ",
+			"wrapper",
+			"picslideWrapper",
+			"ilightbox",
+			"no email address",
+			"already subscribed",
+			"lready subscribed to li",
+			"listSubscribe",
+			"email",
+			"_GET",
+			"errorMessage",
+			"error",
+			"Invalid Mailchimp API Key",
+			"<a href=\"http://www.google.com\">",
+			"googl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"img/frames/F",
+			"<a href=\"http://www.google.com\" class=\"picFrameMainLink\">",
+			"google"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/storyClub.js",
+					"settings":
+					{
+						"buffer_size": 13163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								841,
+								841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "styles/styles.css",
+					"settings":
+					{
+						"buffer_size": 20039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 18588.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 17359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17312,
+								17312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5125.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/jquery-1.10.2.min.js",
+					"settings":
+					{
+						"buffer_size": 93107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64255,
+								64255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/preloadImg.js",
+					"settings":
+					{
+						"buffer_size": 3657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true
+}

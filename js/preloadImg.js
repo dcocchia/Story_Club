@@ -27,6 +27,16 @@
 		window.loadingSpinner.spin(window.document.body);
 	}
 
+	var placeHeaderBg = function() {
+		if (window.document.body) {
+			window.document.body.style.backgroundImage = "url(img/background.png)"; //don't show the image loading
+		} else {
+			var t = setTimeout( function() {
+				placeHeaderBg();
+			}, 1000)
+		}
+	}
+
 	//contentLoaded event
 	function contentLoaded(win, fn) {
 
@@ -67,7 +77,7 @@
 	//preload background
 	var bgImg = new Image(500,500);
 	bgImg.onload = function () {
-		window.document.body.style.backgroundImage = "url(img/background.png)"; //don't show the image loading
+		placeHeaderBg();
 	}
 	bgImg.src = "img/background.png";
 

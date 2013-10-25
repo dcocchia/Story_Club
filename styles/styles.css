@@ -418,15 +418,15 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/AnnaHurley.jpg") -33px -35px; /* Main Headshot 1 */
+	background: url("../img/headShots/CourtneyAlgeo.jpg") -113px 0px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/JayGabler.jpg") -12px 16px; /* Main Headshot 2 */
+	background: url("../img/headShots/JHPalmer.jpg") -12px 12px;; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
-	background: url("../img/headShots/TamaraDeLand.jpg") -55px 10px; /* Main Headshot 3 -- Rarely used. */
+	background: url("../img/headShots/AmySalloway.jpg") -47px 22px; /* Main Headshot 3 -- Rarely used. */
 }
 
 
@@ -956,10 +956,10 @@ h2.contactFormSubmitTextHeader.submitError {
 }
 
 #nextShowTemplate {
-	height: 695px;
+	height: 99%;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 	color: #fff;
 }
 
@@ -988,17 +988,54 @@ h2.contactFormSubmitTextHeader.submitError {
 	line-height: 26px;
 }
 
-#nextShowTemplate .showDetails a {
+#nextShowTemplate a {
 	color: #fff;
 }
 
-#nextShowTemplate .showDetails a:visited {
+#nextShowTemplate a:visited {
 	color: #fff;
 }
 
-#nextShowTemplate .showDetails a:hover {
-	color: rgb(5, 5, 100);
+#nextShowTemplate a:hover {
+	color: blue;
 }
+
+#nextShowTemplate .buyTicksBtnWrapper {
+	text-align: center;
+	margin-top: 0.83em;
+	font-family: Corbert;
+}
+
+#nextShowTemplate a.buyTicksBtn {
+	display: inline-block;
+    background: #f5513c;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all 0s 0;
+    -moz-transition: all 0s 0;
+    -o-transition: all 0s 0;
+    transition: all 0s 0;
+    text-shadow: 0px 1px 1px #9c3528;
+    padding: 6px 30px;
+    border-color: #ec513c;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0.83em;
+}
+
+#nextShowTemplate a.buyTicksBtn:hover {
+    background: #ff6551;
+    -webkit-box-shadow: 0px 0px 0px 4px #ffbfab;
+    -moz-box-shadow: 0px 0px 0px 4px #ffbfab;
+    box-shadow: 0px 0px 0px 4px #ffbfab;
+    border-color: #ed5e4b;
+}
+
 
 .aboutShowTemplate h1 {
 	font-family: SanchezCondensed;
@@ -1092,7 +1129,7 @@ h2.contactFormSubmitTextHeader.submitError {
 
 .perfWrapper {
 	display: inline-block;
-	height: 445px;
+	height: 475px;
 }
 
 .perfWrapper span {
@@ -1102,15 +1139,15 @@ h2.contactFormSubmitTextHeader.submitError {
 }
 
 .perfWrapper span.longDesc {
-
+	height: 140px;
 }
 
 .perfWrapper span.longDesc.long {
-	padding-bottom: 94px;
+	padding-bottom: 10px;
 }
 
 .perfWrapper span.longDesc.med {
-	padding-bottom: 78px;
+	padding-bottom: 59px;
 }
 
 .perfWrapper img {
@@ -1279,18 +1316,18 @@ and (max-width : 520px) {
 		position: absolute;
 		top: 0;
 		border-bottom: 2px dashed #fff;
-		height: 300px;
+		height: 415px;
 	}
 
 	#nextShowTemplate h1.nextShowTop {
-		padding-top: 310px;
+		padding-top: 435px;
 		margin-top: 5px;
 	}
 
 	.mobileQuickStats {
 		display: block;
 		width: 95%;
-		height: 175px;
+		height: 190px;
 		background: rgba(0, 0, 0, 0.6);
 		box-shadow: 0px 3px 10px #222;
 		margin: 0 auto;
