@@ -83,10 +83,13 @@
 
 	//preload headshots
 	var img1 = new Image();
-	img1.src = 'img/headShots/JamieAmyAnn.jpg';
+	img1.src = 'img/headShots/CourtneyAlgeo.jpg';
 
 	var img2 = new Image();
-	img2.src = 'img/headShots/SteveGronwall.jpg';
+	img2.src = 'img/headShots/JHPalmer.jpg';
+
+	var img3 = new Image();
+	im3.src = 'img/headShots/AmySalloway.jpg';
 
 	//show images when they're ready
 	window.onload = function() {
