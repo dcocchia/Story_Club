@@ -89,7 +89,7 @@
 	img2.src = 'img/headShots/JHPalmer.jpg';
 
 	var img3 = new Image();
-	im3.src = 'img/headShots/AmySalloway.jpg';
+	img3.src = 'img/headShots/AmySalloway.jpg';
 
 	//show images when they're ready
 	window.onload = function() {
