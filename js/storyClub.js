@@ -12,7 +12,21 @@ var StoryClub = (function ($) {
 		headShotTimer,
 		currentPerf,
 		waitingPerf,
-		windowWidth = $(window).width();
+		windowWidth = $(window).width(),
+		windowHeight = $(window).height();
+
+		//IE fix for lasIndexOf :(
+		if (!('indexOf' in Array.prototype)) {
+		    Array.prototype.indexOf= function(find, i /*opt*/) {
+		        if (i===undefined) i= 0;
+		        if (i<0) i+= this.length;
+		        if (i<0) i= 0;
+		        for (var n= this.length; i<n; i++)
+		            if (i in this && this[i]===find)
+		                return i;
+		        return -1;
+		    };
+		}
 
 		if (!threePerformers) {
 			currentPerf = (Math.floor(Math.random() * 2) + 1).toString(), //choose at random
@@ -304,6 +318,17 @@ var StoryClub = (function ($) {
 			event.preventDefault();
 			 
 			$.iLightBox([
+				{ url: 'img/showScenes/showScene (31).jpg' },
+				{ url: 'img/showScenes/showScene (30).jpg' },
+				{ url: 'img/showScenes/showScene (29).jpg' },
+				{ url: 'img/showScenes/showScene (28).jpg' },
+				{ url: 'img/showScenes/showScene (27).jpg' },
+				{ url: 'img/showScenes/showScene (26).jpg' },
+				{ url: 'img/showScenes/showScene (25).jpg' },
+				{ url: 'img/showScenes/showScene (24).jpg' },
+				{ url: 'img/showScenes/showScene (23).jpg' },
+				{ url: 'img/showScenes/showScene (22).jpg' },
+				{ url: 'img/showScenes/showScene (21).jpg' },
 				{ url: 'img/showScenes/showScene (10).jpg' },
 				{ url: 'img/showScenes/showScene (11).jpg' },
 				{ url: 'img/showScenes/showScene (12).jpg' },
@@ -378,13 +403,17 @@ var StoryClub = (function ($) {
 		$("#nextShow").click( function(e) {
 			e.preventDefault();
 
-			var frameWidth = 900,
-				frameHeight = 700;
+			var frameWidth = "90%",
+				frameHeight = "95%";
 
+
+			if (windowHeight > 820 ) {
+				frameHeight = "90%";
+			}
 
 			if (windowWidth < 500) {
 				frameWidth = "100%";
-				frameHeight = "75%";
+				frameHeight = "95%";
 			}
 
 			$.iLightBox([
@@ -402,13 +431,17 @@ var StoryClub = (function ($) {
 		$("#mainPerfs").click( function(e) {
 			e.preventDefault();
 
-			var frameWidth = 900,
-				frameHeight = 700;
+			var frameWidth = "90%",
+				frameHeight = "95%";
 
+
+			if (windowHeight > 820 ) {
+				frameHeight = "90%";
+			}
 
 			if (windowWidth < 500) {
 				frameWidth = "100%";
-				frameHeight = "75%";
+				frameHeight = "95%";
 			}
 
 			$.iLightBox([
