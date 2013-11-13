@@ -152,7 +152,153 @@ var StoryClub = (function ($) {
 
 	}
 
-	storyClub.bindLightBoxEvents = function() {
+	storyClub.flickApi = function() {
+		var flickSelf = this,
+			flickrPage = 1,
+			photoSetsLoaded = false,
+			preFetching = false;
+
+		this.picSetsInfo;
+		this.picSets;
+
+		this.getPicSets = function() {
+			var url = "http://api.flickr.com/services/rest/",
+				settings = {
+					dataType: "json",
+					error: flickSelf.getPicSetsError,
+					success: flickSelf.getPicSetsSuccess,
+					data: {
+						user_id: "107693014@N02",
+						method: "flickr.photosets.getList",
+						api_key: "52c7aee500ac0d9d0a60e1264c651faf",
+						format: "json",
+						nojsoncallback: 1,
+					}
+				};
+
+			$.ajax(url, settings);
+		};
+
+		this.getPicSetsSuccess = function(data) {
+			if (data && data.stat === "ok") {
+				var i = 0,
+					setsLenght = data.photosets.photoset.length,
+					thisSet;
+
+				flickSelf.picSetsInfo = data.photosets.photoset;
+				photoSetsLoaded = true;
+
+				if (preFetching) {
+					flickSelf.picSets = {};
+
+					for (; i < setsLenght; i += 1) {
+						thisSet = flickSelf.picSetsInfo[i];
+						flickSelf.picSets[thisSet.id] = {setTitle: thisSet.title._content};
+						flickSelf.getPics(thisSet.id);
+					}
+				}
+			} else {
+				//error
+				console.warn("There was a problem fetching photo sets: ", data);
+				photoSetsLoaded = false;
+			}
+		};
+
+		this.getPicSetsError = function(jqXHR, textStatus, errorThrown) {
+			console.warn("There was a problem fetching photo sets: ", jqXHR, textStatus, errorThrown);
+			photoSetsLoaded = false;
+		};
+
+		this.getPics = function(photoSetId) {
+			var url = "http://api.flickr.com/services/rest/",
+				settings = {
+					dataType: "json",
+					error: flickSelf.getPicError,
+					success: flickSelf.getPicSucces,
+					data: {
+						method: "flickr.photosets.getPhotos",
+						api_key: "52c7aee500ac0d9d0a60e1264c651faf",
+						photoset_id: photoSetId,
+						extras: "url_o",
+						format: "json",
+						nojsoncallback: 1,
+						page: flickrPage,
+						per_page: 25
+					}
+				};
+
+			$.ajax(url, settings);
+		};
+
+		this.getPicError = function( jqXHR, textStatus, errorThrown ) {
+			console.log("getPics call failed: ", jqXHR, textStatus, errorThrown); //just logging to console for now
+			console.log("Attempting call once more.");
+
+			if ($.browser.msie && !jQuery.support.cors) {
+				console.log("CORS disabled. Enabling and trying again.");
+				jQuery.support.cors = true;
+			}
+
+			getPics(); //try one more time
+		};
+
+		this.getPicSucces = function( data ) {
+
+			if (data && data.stat === "ok") {
+
+				if (data.photoset.pages > flickrPage) {
+					flickrPage += 1;
+				}
+
+				if (!flickSelf.picSets) {
+					flickSelf.picSets = {};
+				}
+				
+				var i,
+					thisPic,
+					picSet = data.photoset.photo,
+					setLength = picSet.length,
+					photoSetId = data.photoset.id;
+
+				for (i = 0; i < setLength; i += 1) {
+					thisPic = picSet[i];
+					if (thisPic.isprimary = "1") {
+						flickSelf.picSets[photoSetId].primary = thisPic;
+					}
+					flickSelf.picSets[photoSetId][i] = thisPic;
+				};
+
+
+			} else {
+				console.log("Invalid Server Response. Error code: ", data.code, data.message);
+			}
+		};
+
+		this.createPhotoSetViewTemplate = function () {
+			var template = "<ul class='photoSetThumbs'>",
+				thisPicSet;
+
+			for (pic in flickSelf.picSets) {
+				thisPicSet = flickSelf.picSets[pic];
+				template += "<li><img src='" + thisPicSet.primary.url_o + "'/></li>";
+			}
+
+			template += "</ul>";
+
+			return template;
+		}
+
+		this.preFetch = function() {
+			preFetching = true;
+			flickSelf.getPicSets();
+		};
+	};
+
+	storyClub.instatePhotoView = function() {
+
+	};
+
+	storyClub.bindLightBoxEvents = function(picsData) {
 		$('#photoFrame').bind('click', function(event) {
 			// stops default click behavior
 			event.preventDefault();
@@ -470,7 +616,9 @@ var StoryClub = (function ($) {
 		}
 
 		return (!somethingNotDone);
-	}
+	};
+
+	storyClub.flickrInterface = new storyClub.flickApi();
 
 	return storyClub; //export the storyClub object and any function/vars inside it
 }(jQuery));
@@ -480,4 +628,5 @@ $(document).ready(function() {
 	StoryClub.bindPicEvents();
 	StoryClub.bindLightBoxEvents();
 	StoryClub.initHeadShotCycle();
+	StoryClub.flickrInterface.preFetch();
 });
