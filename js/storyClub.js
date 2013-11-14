@@ -433,7 +433,14 @@ var StoryClub = (function ($) {
 
 			var frameWidth = "90%",
 				frameHeight = "95%";
+<<<<<<< HEAD
+=======
 
+>>>>>>> 229d78899243d4243112380fbbc51e7e4363e26d
+
+			if (windowHeight > 820 ) {
+				frameHeight = "90%";
+			}
 
 			if (windowHeight > 820 ) {
 				frameHeight = "90%";
