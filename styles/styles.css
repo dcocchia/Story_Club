@@ -1127,6 +1127,70 @@ h2.contactFormSubmitTextHeader.submitError {
 	margin-bottom: 15px;
 }
 
+.photoViewTemplate {
+
+}
+
+.photoViewTemplate .photoSetThumbs {
+	margin: 0 auto;
+	width: 85%;
+	padding: 0;
+}
+
+.photoViewTemplate .photoSetThumbs li {
+	display: inline-block;
+	margin: 10px;
+	border: 1px solid #fff;
+}	
+
+.photoViewTemplate .photoSetThumbs li:hover {
+	border: 1px solid #fff;
+	cursor: pointer;
+	transform: scale(1.1);
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari and Chrome */
+}
+
+.photoViewTemplate .photoSetThumbs img { 
+	max-width: 100%;
+}
+
+.photoViewTemplate .picSetThumbWrapper {
+	width: 200px;
+}
+
+.photoViewBackBtn {
+	position: fixed;
+	top: 0;
+	right: 10px;
+	width: 100px;
+	height: 50px;
+	background: black;
+	color: #ccc;
+	font-family: SanchezCondensed;
+	text-align: center;
+	font-size: 22px;
+	z-index: 999999;
+	line-height: 42px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.photoViewBackBtn:hover {
+	background: #ccc;
+	color: black;
+	cursor: pointer;
+}
+
+.photoViewTemplate .picSetTitle {
+	height: 25px;
+	color: #fff;
+	text-align: center;
+	font-size: 22px;
+	line-height: 22px;
+	font-family: Corbert;
+}
+
 .perfWrapper {
 	display: inline-block;
 	height: 475px;
