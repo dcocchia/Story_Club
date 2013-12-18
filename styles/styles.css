@@ -300,7 +300,8 @@ sup.topNum {
 	color: #FFF;
 }
 
-.MSIE .frame3 .picSliderContent {
+.MSIE .frame3 .picSliderContent,
+.Netscape .frame3 .picSliderContent {
 	top: 215px;
 }
 
@@ -418,15 +419,15 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/CourtneyAlgeo.jpg") -113px 0px; /* Main Headshot 1 */
+	background: url("../img/headShots/MaryaHornbacher.jpg") -90px 11px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/JHPalmer.jpg") -12px 12px;; /* Main Headshot 2 */
+	background: url("../img/headShots/PaulNemeth.jpg") -29px 8px; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
-	background: url("../img/headShots/AmySalloway.jpg") -47px 22px; /* Main Headshot 3 -- Rarely used. */
+	background: url("../img/headShots/AminaHarper.jpg") -58px 5px; /* Main Headshot 3 -- Rarely used. */
 }
 
 
@@ -493,7 +494,7 @@ sup.topNum {
 }
 
 .picFrame.frame6 .picSliderContent.threePerfs {
-	top: 50px;
+	top: 67px;
 }
 
 .picFrame .canvasPlaceHolder {
