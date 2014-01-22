@@ -170,8 +170,7 @@ var StoryClub = (function ($) {
 		var flickSelf = this,
 			flickrPage = 1,
 			photoSetsLoaded = false,
-			preFetching = false,
-			$photoBackBtn = $("#photoViewBackBtn");
+			preFetching = false;
 
 		this.picSetsInfo;
 		this.picSets;
@@ -187,7 +186,6 @@ var StoryClub = (function ($) {
 						method: "flickr.photosets.getList",
 						api_key: "52c7aee500ac0d9d0a60e1264c651faf",
 						format: "json",
-						primary_photo_extras: "url_o",
 						nojsoncallback: 1,
 					}
 				};
@@ -209,16 +207,9 @@ var StoryClub = (function ($) {
 
 					for (; i < setsLenght; i += 1) {
 						thisSet = flickSelf.picSetsInfo[i];
-						flickSelf.picSets[thisSet.id] = {
-							title: thisSet.title._content,
-							primary : thisSet.primary_photo_extras.url_o,
-							id: thisSet.id
-						};
+						flickSelf.picSets[thisSet.id] = {setTitle: thisSet.title._content};
 						flickSelf.getPics(thisSet.id);
 					}
-
-				flickSelf.createPhotoSetViewTemplate($("#photoViewTemplate"));
-
 				}
 			} else {
 				//error
@@ -288,87 +279,28 @@ var StoryClub = (function ($) {
 					if (thisPic.isprimary = "1") {
 						flickSelf.picSets[photoSetId].primary = thisPic;
 					}
-					if (!flickSelf.picSets[photoSetId].picArr) {
-						flickSelf.picSets[photoSetId].picArr = [];
-					}
-					
-					flickSelf.picSets[photoSetId].picArr.push(thisPic);
+					flickSelf.picSets[photoSetId][i] = thisPic;
 				};
+
 
 			} else {
 				console.log("Invalid Server Response. Error code: ", data.code, data.message);
 			}
 		};
 
-		this.createPhotoSetViewTemplate = function ($photoViewer) {
+		this.createPhotoSetViewTemplate = function () {
 			var template = "<ul class='photoSetThumbs'>",
 				thisPicSet;
 
 			for (pic in flickSelf.picSets) {
 				thisPicSet = flickSelf.picSets[pic];
-				template += "<li flickrId='" + thisPicSet.id + "'><div class='picSetThumbWrapper'><img src='" + thisPicSet.primary + "'/></div><div class='picSetTitle'><span>" + thisPicSet.title + "</span></div></li>";
+				template += "<li><img src='" + thisPicSet.primary.url_o + "'/></li>";
 			}
 
 			template += "</ul>";
 
-			$photoViewer.html(template);
-		};
-
-		this.buildPhotoArr = function(picSetId) {
-			var finalArr = [],
-				i = 0,
-				picSetsLength,
-				thisPicSet,
-				thisPic;
-
-			if (flickSelf.picSets[picSetId]) {
-				thisPicSet = flickSelf.picSets[picSetId].picArr
-				picSetsLength = thisPicSet.length;
-			} else {
-				picSetsLength = 0;
-			}
-
-			for (; i < picSetsLength; i += 1) {
-				thisPic = thisPicSet[i];
-
-				finalArr.push({
-					url: thisPic.url_o
-				});
-			}
-
-			return finalArr;
-		};
-
-		this.showPhotoView = function(photoArr) {
-			//photoArr ex: 
-			//	[{ url: 'img/showScenes/showScene (31).jpg' },
-			//	{ url: 'img/showScenes/showScene (30).jpg' },
-			//	{ url: 'img/showScenes/showScene (29).jpg' }]
-
-			this.lightBox.close();
-
-			var renderBackBtn = function() {
-				$photoBackBtn.show();
-			}
-
-			var removeBackBtn = function() {
-				$photoBackBtn.hide();
-			}
-
-			storyClub.flickrInterface.lightBox = $.iLightBox(
-				photoArr, 
-				{ 
-					skin: 'dark', 
-					startFrom: 0, 
-					path: 'horizontal', 
-					callback: { 
-						onShow: renderBackBtn,
-						onHide: removeBackBtn
-					} 
-				}
-			);
-				//dark, light, parade, smooth, metro-black, metro-white and mac.
-		};
+			return template;
+		}
 
 		this.preFetch = function() {
 			preFetching = true;
@@ -376,59 +308,46 @@ var StoryClub = (function ($) {
 		};
 	};
 
+	storyClub.instatePhotoView = function() {
+
+	};
+
 	storyClub.bindLightBoxEvents = function(picsData) {
-		var bindPhotos = function() {
-				var picSets = $(".ilightbox-container").find("#photoViewTemplate").find("li");
-
-				picSets.each(function() {
-					var $this = $(this);
-					$this.click(function(e) {
-						e.preventDefault();
-
-						var setId = $this.attr("flickrid"),
-							photoArr = storyClub.flickrInterface.buildPhotoArr(setId);
-
-
-						storyClub.flickrInterface.showPhotoView(photoArr);
-					})
-				});
-			},
-			showPicSets = function() {
-				var frameWidth = "85%",
-					frameHeight = "85%";
-
-
-				if (windowWidth < 500) {
-					frameWidth = "100%";
-				}
-
-				storyClub.flickrInterface.lightBox = $.iLightBox([
-					{
-						URL:"#photoViewTemplate",
-						type:"inline",
-						options: {
-							width: frameWidth,
-							height: frameHeight,
-							onRender: bindPhotos
-						}
-					}
-				]);
-			}
-
-		$("#photoViewBackBtn").click(function(e) {
-			e.preventDefault();
-
-			storyClub.flickrInterface.lightBox.close();
-
-			showPicSets();
-		});
-
-		$('#photoFrame').bind('click', function(e) {
-			// stop default click behavior
-			e.preventDefault();
+		$('#photoFrame').bind('click', function(event) {
+			// stops default click behavior
+			event.preventDefault();
 			 
-			showPicSets();
-
+			$.iLightBox([
+				{ url: 'img/showScenes/showScene (31).jpg' },
+				{ url: 'img/showScenes/showScene (30).jpg' },
+				{ url: 'img/showScenes/showScene (29).jpg' },
+				{ url: 'img/showScenes/showScene (28).jpg' },
+				{ url: 'img/showScenes/showScene (27).jpg' },
+				{ url: 'img/showScenes/showScene (26).jpg' },
+				{ url: 'img/showScenes/showScene (25).jpg' },
+				{ url: 'img/showScenes/showScene (24).jpg' },
+				{ url: 'img/showScenes/showScene (23).jpg' },
+				{ url: 'img/showScenes/showScene (22).jpg' },
+				{ url: 'img/showScenes/showScene (21).jpg' },
+				{ url: 'img/showScenes/showScene (10).jpg' },
+				{ url: 'img/showScenes/showScene (11).jpg' },
+				{ url: 'img/showScenes/showScene (12).jpg' },
+				{ url: 'img/showScenes/showScene (13).jpg' },
+				{ url: 'img/showScenes/showScene (14).jpg' },
+				{ url: 'img/showScenes/showScene (15).jpg' },
+				{ url: 'img/showScenes/showScene (16).jpg' },
+				{ url: 'img/showScenes/showScene (17).jpg' },
+				{ url: 'img/showScenes/showScene (18).jpg' },
+				{ url: 'img/showScenes/showScene (19).jpg' },
+				{ url: 'img/showScenes/showScene (20).jpg' },
+				{ url: 'img/showScenes/showScene (1).jpg' },
+				{ url: 'img/showScenes/showScene (4).jpg' },
+				{ url: 'img/showScenes/showScene (6).jpg' },
+				{ url: 'img/showScenes/showScene (8).jpg' },
+				{ url: 'img/showScenes/showScene (9).jpg' }], 
+				{ skin: 'dark', startFrom: 0, path: 'horizontal' }
+			);
+				//dark, light, parade, smooth, metro-black, metro-white and mac.
 		});
 
 		$("#newsLetterFrame").click( function(e) {
@@ -515,9 +434,6 @@ var StoryClub = (function ($) {
 			var frameWidth = "90%",
 				frameHeight = "95%";
 
-			if (windowHeight > 820 ) {
-				frameHeight = "90%";
-			}
 
 			if (windowHeight > 820 ) {
 				frameHeight = "90%";
@@ -670,46 +586,6 @@ var StoryClub = (function ($) {
 
 			return false;
 		});
-	}
-
-	storyClub.getTubeLists = function(callback) {
-		settings = {
-			type: "GET",
-			data: {
-				part:"id",
-				channelId: "UCwUpa_FAmJ7HTxY0Vkr8t5A",
-				key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
-			},
-			url: "https://www.googleapis.com/youtube/v3/playlists",
-			success: function( data ) {
-				callback.call(this, data);
-			},
-			error: function( a,b,c ) { 
-				console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
-			}
-		}
-
-		$.ajax(settings);
-	}
-
-	storyClub.getTubeVids = function(listId, callback) {
-		settings = {
-			type: "GET",
-			data: {
-				part: "id,contentDetails",
-				playlistId: listId,
-				key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
-			},
-			url: "https://www.googleapis.com/youtube/v3/playlistItems",
-			success: function( data ) {
-				callback.call(this, data);
-			},
-			error: function( a,b,c ) { 
-				console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
-			}
-		}
-
-		$.ajax(settings);
 	}
 
 	storyClub.contactFormSubmit = function(lightBox) {
