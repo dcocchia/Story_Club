@@ -6,7 +6,7 @@
 // Module style keeps gobal scope clean
 var StoryClub = (function ($) {
 	var storyClub = {}; //exported global var
-	var threePerformers = true; //special logic throughout for when we have 3 features
+	var threePerformers = false; //special logic throughout for when we have 3 features
 
 	var loadingSpinner,
 		headShotTimer,

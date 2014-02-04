@@ -419,11 +419,11 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/MaryaHornbacher.jpg") -90px 11px; /* Main Headshot 1 */
+	background: url("../img/TYPEWRITER.png") 18px 55px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/PaulNemeth.jpg") -29px 8px; /* Main Headshot 2 */
+	background: url("../img/headShots/TaylorTower.jpg") -60px 12px; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
@@ -1347,7 +1347,9 @@ and (max-width : 520px) {
 	}
 
 	.perfWrapper.left.threePerfs,
-	.perfWrapper.right.threePerfs { 
+	.perfWrapper.right.threePerfs,
+	.perfWrapper.left,
+	.perfWrapper.right { 
 		width: 100%
 	}
 
