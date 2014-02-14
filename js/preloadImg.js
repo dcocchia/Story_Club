@@ -86,7 +86,7 @@
 	img1.src = 'img/headShots/TaylorTower.jpg';
 
 	var img2 = new Image();
-	img2.src = 'img/headShots/JHPalmer.jpg';
+	img2.src = 'img/headShots/Haji.jpg';
 
 	// var img3 = new Image();
 	// img3.src = 'img/headShots/AmySalloway.jpg';
