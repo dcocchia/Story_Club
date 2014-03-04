@@ -419,11 +419,11 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/Haji.jpg") -52px -22px; /* Main Headshot 1 */
+	background: url("../img/headShots/HeidiArneson.jpg") -36px 12px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/TaylorTower.jpg") -60px 12px; /* Main Headshot 2 */
+	background: url("../img/headShots/BasmaIbrahimDeVries.jpg") -48px 10px; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
@@ -463,6 +463,10 @@ sup.topNum {
 	line-height: 32px;
 	top: 220px;
 	font-size: 20px;
+}
+
+.picFrame.frame6 a span.longName{
+	font-size: 16px;
 }
 
 .picFrame.frame6 a span.sub {
