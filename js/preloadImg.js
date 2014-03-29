@@ -83,10 +83,10 @@
 
 	//preload headshots
 	var img1 = new Image();
-	img1.src = 'img/headShots/HeidiArneson.jpg';
+	img1.src = 'img/headShots/KateKunkelBailey.jpg';
 
 	var img2 = new Image();
-	img2.src = 'img/headShots/BasmaIbrahimDeVries.jpg';
+	img2.src = 'img/headShots/Leif.jpg';
 
 	// var img3 = new Image();
 	// img3.src = 'img/headShots/AmySalloway.jpg';

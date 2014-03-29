@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"border-rad",
+				"border-bottom-right-radius"
+			],
+			[
+				"light",
+				"lightBox"
+			],
+			[
+				"bac",
+				"backBtn"
+			],
+			[
+				"lig",
+				"lightBox"
+			],
+			[
+				"ren",
+				"renderBackBtn"
+			],
+			[
+				"on",
+				"onRender"
+			],
+			[
+				"flic",
+				"flickrInterface"
+			],
+			[
+				"this",
+				"thisPic"
+			],
+			[
+				"thisPi",
+				"thisPicSet"
+			],
+			[
+				"pic",
+				"picSetsLength"
+			],
+			[
+				"picSets",
+				"picSetsLength"
+			],
+			[
+				"flick",
+				"flickrId"
+			],
+			[
+				"show",
+				"showPhotoView"
+			],
+			[
+				"e",
+				"easeOutExpo"
+			],
+			[
+				"pht",
+				"photoViewTemplate"
+			],
+			[
+				"primar",
+				"primary_photo_extras"
+			],
+			[
+				"photo",
+				"photoViewer"
+			],
+			[
 				"wind",
 				"windowHeight"
 			],
@@ -14,10 +82,6 @@
 			[
 				"frame",
 				"frameHeight"
-			],
-			[
-				"pic",
-				"picFrame"
 			],
 			[
 				"paddig",
@@ -179,7 +243,7 @@
 			"file": "js/storyClub.js",
 			"settings":
 			{
-				"buffer_size": 13880,
+				"buffer_size": 19583,
 				"line_ending": "Windows"
 			}
 		},
@@ -187,7 +251,7 @@
 			"file": "styles/styles.css",
 			"settings":
 			{
-				"buffer_size": 20888,
+				"buffer_size": 22113,
 				"line_ending": "Windows"
 			}
 		},
@@ -195,23 +259,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 18062,
+				"buffer_size": 17968,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "lib/jquery-1.10.2.min.js",
-			"settings":
-			{
-				"buffer_size": 93107,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/preloadImg.js",
 			"settings":
 			{
-				"buffer_size": 3725,
+				"buffer_size": 3741,
 				"line_ending": "Windows"
 			}
 		}
@@ -240,6 +296,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Dominic/Story_Club/lib/jquery-1.10.2.min.js",
 		"/C/Users/Dominic/AppData/Local/Temp/Temp1_balupton-jquery-scrollto-a30313e.zip/balupton-jquery-scrollto-a30313e/lib/jquery-scrollto.js",
 		"/C/Users/Dominic/Blue_Ox/css/placeHolderStyle.css",
 		"/C/Users/Dominic/Story_Club/styles/styles.css",
@@ -271,6 +328,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2013",
+			"ie",
+			"thursday",
+			"2nd",
 			"size",
 			"resize",
 			"indexOf",
@@ -307,7 +368,7 @@
 			"googl"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -333,15 +394,15 @@
 					"file": "js/storyClub.js",
 					"settings":
 					{
-						"buffer_size": 13880,
+						"buffer_size": 19583,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7101,
-								7101
+								11292,
+								11292
 							]
 						],
 						"settings":
@@ -350,7 +411,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7511.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -360,23 +421,15 @@
 					"file": "styles/styles.css",
 					"settings":
 					{
-						"buffer_size": 20888,
+						"buffer_size": 22113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6199,
-								6212
-							],
-							[
-								6325,
-								6333
-							],
-							[
-								6447,
-								6458
+								7122,
+								7130
 							]
 						],
 						"settings":
@@ -385,7 +438,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6022.0,
+						"translation.y": 6573.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -395,15 +448,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 18062,
+						"buffer_size": 17968,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1292,
-								51
+								17258,
+								17258
 							]
 						],
 						"settings":
@@ -411,51 +464,25 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5253.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "lib/jquery-1.10.2.min.js",
-					"settings":
-					{
-						"buffer_size": 93107,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64255,
-								64255
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "js/preloadImg.js",
 					"settings":
 					{
-						"buffer_size": 3725,
+						"buffer_size": 3741,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2713,
-								2713
+								2692,
+								2692
 							]
 						],
 						"settings":
@@ -464,7 +491,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 1004.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

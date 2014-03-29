@@ -419,11 +419,11 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/HeidiArneson.jpg") -36px 12px; /* Main Headshot 1 */
+	background: url("../img/headShots/KateKunkelBailey.jpg") -86px 12px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/BasmaIbrahimDeVries.jpg") -48px 10px; /* Main Headshot 2 */
+	background: url("../img/headShots/Leif.jpg") -48px -12px; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
