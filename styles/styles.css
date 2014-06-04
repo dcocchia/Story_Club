@@ -419,15 +419,15 @@ sup.topNum {
 
 /*NOTE: Always remember to add these images to the preloader */
 .frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/KateKunkelBailey.jpg") -86px 12px; /* Main Headshot 1 */
+	background: url("../img/headShots/NimoFarah.jpg") -18px 13px; /* Main Headshot 1 */
 }
 
 .frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/Leif.jpg") -48px -12px; /* Main Headshot 2 */
+	background: url("../img/headShots/WangPing.jpg") -52px 12px; /* Main Headshot 2 */
 }
 
 .frame6 .picFrameMainLink.perf3 {
-	background: url("../img/headShots/AminaHarper.jpg") -58px 5px; /* Main Headshot 3 -- Rarely used. */
+	background: url("../img/headShots/KateMoore.jpg") -33px 0; /* Main Headshot 3 -- Rarely used. */
 }
 
 
@@ -498,7 +498,7 @@ sup.topNum {
 }
 
 .picFrame.frame6 .picSliderContent.threePerfs {
-	top: 67px;
+	top: 45px;
 }
 
 .picFrame .canvasPlaceHolder {

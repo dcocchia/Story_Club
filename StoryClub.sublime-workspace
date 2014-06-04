@@ -251,7 +251,7 @@
 			"file": "styles/styles.css",
 			"settings":
 			{
-				"buffer_size": 22113,
+				"buffer_size": 22103,
 				"line_ending": "Windows"
 			}
 		},
@@ -259,7 +259,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 17968,
+				"buffer_size": 17966,
 				"line_ending": "Windows"
 			}
 		},
@@ -267,7 +267,7 @@
 			"file": "js/preloadImg.js",
 			"settings":
 			{
-				"buffer_size": 3741,
+				"buffer_size": 3730,
 				"line_ending": "Windows"
 			}
 		}
@@ -318,7 +318,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -328,6 +328,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Bas",
+			"heid",
+			"hei",
+			"April",
+			"March",
 			"2013",
 			"ie",
 			"thursday",
@@ -421,15 +426,15 @@
 					"file": "styles/styles.css",
 					"settings":
 					{
-						"buffer_size": 22113,
+						"buffer_size": 22103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7122,
-								7130
+								6383,
+								6383
 							]
 						],
 						"settings":
@@ -438,7 +443,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6573.0,
+						"translation.y": 6064.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -448,15 +453,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 17968,
+						"buffer_size": 17966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17258,
-								17258
+								17243,
+								17243
 							]
 						],
 						"settings":
@@ -464,7 +469,7 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 5253.0,
+						"translation.y": 5223.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -474,15 +479,15 @@
 					"file": "js/preloadImg.js",
 					"settings":
 					{
-						"buffer_size": 3741,
+						"buffer_size": 3730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2692,
-								2692
+								2675,
+								2675
 							]
 						],
 						"settings":
