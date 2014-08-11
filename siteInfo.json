@@ -1,0 +1,51 @@
+{
+	"date": {
+		"month": "September",
+		"day": "25th",
+		"monthNumber": 9,
+		"dayNumber": 25,
+		"dayOfWeek": "Thursday",
+		"monthOccurance": "last",
+		"fullDate": "September 25th, 2014",
+		"showStart": "7:00 PM",
+		"doorsOpen": "6:00 PM"
+	},
+	"venue": {
+		"name": "Bryant Lake Bowl",
+		"webSite": "http://bryantlakebowl.com/",
+		"addressLine1": "810 W Lake St",
+		"addressLine2": "Minneapolis, MN 55408",
+		"mapLink": "https://maps.google.com/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=5389449810521333560&q=Bryant-Lake+Bowl&iwloc=A&gl=US&hl=en"
+	},
+	"tickets": {
+		"price": "$6-$12",
+		"link": "http://www.brownpapertickets.com/event/817431"
+	},
+	"performers": [
+		{
+			"name": "Nikolas Martell",
+			"bio": "Nikolas Martell is a professional performing artist, specializing in spoken word. He is a national slam poetry champion, slam poetry coach, and producer of the OUTspoken! Presents monthly queer open mic and cabaret series.",
+			"image": {
+				"name": "NikolasMartell.jpg",
+				"framePosition": {
+					"x": 0,
+					"y": 0
+				}
+			}
+		},
+		{
+			"name": "Mahmoud Hakima",
+			"bio": "Mahmoud Hakima is a Twin Cities storyteller. He created and performed the MN Fringe solo hits, \"Two Bowls  of Cereal and Some Bacon\" and \"Can Michael Come Out and Play?\"",
+			"image": {
+				"name": "MahmoudHakima.jpg",
+				"framePosition": {
+					"x": -38,
+					"y": 12
+				}
+			}
+		}
+	],
+	"customOptions": {
+		"threePerformers": false
+	}
+}

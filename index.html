@@ -20,12 +20,15 @@
 		<link rel="apple-touch-icon-precomposed" href="assets/ico/57.png">
 
 		<!-- Styles -->
-		<link href="styles/styles.css?ver1.29" rel="stylesheet">
+		<link href="styles/styles.css?ver1.30" rel="stylesheet">
 		<link href="lib/iLightBox/css/ilightbox.css" rel="stylesheet">
+
+		<!-- Styles controlled by template engine -->
+		<style id="performerStyles"></style>
 
 		<!-- JS that needs to be loaded immediately loaded here. All others at end of body for speed. -->
 		<script src="lib/spin.min.js"></script>
-		<script src="js/preloadImg.js?ver1.29" ></script>
+		<script src="js/preloadImg.js?ver1.30" ></script>
 		<script src="lib/html5shiv.js"></script>
 		
 		<script>
@@ -48,54 +51,19 @@
 			</h2>
 		</header>
 
-		<div class="mobileQuickStats">
-		   	<h1>Thursday, June 26th, 2014</h1>
-			<h2>Doors at 6pm -- Show starts at 7pm</h2>
-			<span><a href="http://bryantlakebowl.com/" target="_blank">Bryant Lake Bowl</a></span>
-			<a href="https://maps.google.com/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=5389449810521333560&q=Bryant-Lake+Bowl&iwloc=A&gl=US&hl=en" target="_blank">
-				<span>810 W Lake St</span>
-				<span>Minneapolis, MN 55408</span>
-			</a>
-		</div>
+		<div class="mobileQuickStats"></div>
 
    		<nav id ="nav" style="display:none">
    			<ul id="picFrameWrapper">
 	   			<li class="picFrame frame6">
 	   				<img src="img/frames/FRAME6.png" class="frameObj frame6" />
 	   				<a href="#" id="mainPerfs" class="picFrameMainLink perf1">
-	   					<span id="perf1">Nimo Farah</span>
-	   					<span id="perf2">Wang Ping</span>
-	   					<span id="perf3" class="">Kate Moore</span>
-						<span class="sub">Featured Performer</span>
-	   					<div class="picSliderWrapper">
-		   					<div class="picSlider">
-		   						<div class="picSliderContent threePerfs">
-			   						<span>Nimo Farah</span>
-			   						<span class="plus">&</span>
-			   						<span>Wang Ping</span>
-									<span class="plus">&</span>
-			   						<span>Kate Moore</span>
-			   					</div>
-		   					</div>
-		   				</div>
 	   				</a>
 	   				<span class="canvasPlaceHolder"></span>
 	   			</li>
 	   			<li class="picFrame frame1">
 	   				<img src="img/frames/FRAME1.png" class="frameObj frame1" />
-	   				<a href="#" id="nextShow" class="picFrameMainLink" >
-	   					<span class="nextShow header">Next Show</span>
-	   					<span class="nextShow thurs">Thursday</span>
-	   					<span class="nextShow date"><sup class="topNum">6</sup><span class="dateSlash">&frasl;</span><sub>26</sub></span>
-	   					<div class="picSliderWrapper">
-		   					<div class="picSlider">
-		   						<div class="picSliderContent">
-			   						Last Thursday of the Month
-			   						<span>June 26th, 2014</span>
-			   					</div>
-		   					</div>
-		   				</div>
-	   				</a>
+	   				<a href="#" id="nextShow" class="picFrameMainLink" ></a>
 	   			</li>
 	   			<li class="picFrame frame2">
 	   			<img src="img/frames/FRAME2.png" class="frameObj frame2" />
@@ -320,42 +288,91 @@
    		</div>
 
    		<div id="nextShowTemplate" style="display:none" class="nextShowTemplate">
-   			<h1 class="nextShowTop">Next Show</h1>
-   			<div class="perfWrapper left threePerfs">
-   				<h2>Nimo Farah</h2>
-   				<span class="longDesc">Nimo H. Farah uses language to express things she finds too confusing. Part of her current undertaking is to develop her skills as an orator while blending Somali and English.</span>
-   				<img src="img/headShots/NimoFarah.jpg"/>
-   			</div>
-
-   			<div class="perfWrapper left threePerfs">
-   				<h2>Wang Ping</h2>
-   				<span class="longDesc">Wang Ping is the founder and director of the Kinship of Rivers project, a five-year project that builds a sense of kinship among the people who live along the Mississippi and Yangtze Rivers.</span>
-   				<img src="img/headShots/WangPing.jpg"/>
-   			</div>
-		   <div class="perfWrapper right threePerfs">
-   				<h2>Kate Moore</h2>
-   				<span class="longDesc">Kate Moore is a local chef, educator, performer and community builder.  Her favorite activities include entertaining, reading, and making out like she's still in high school.</span>
-   				<img src="img/headShots/KateMoore.jpg"/>
-   			</div>
-   			<div class="showDetails">
-   				<h1>Thursday, June 26th, 2014</h1>
-   				<h2>7:00 PM</h2>
-   				<span><a href="http://bryantlakebowl.com/" target="_blank">Bryant Lake Bowl</a></span>
-   				<a href="https://maps.google.com/maps?expflags=enable_star_based_justifications:true&ie=UTF8&cid=5389449810521333560&q=Bryant-Lake+Bowl&iwloc=A&gl=US&hl=en" target="_blank">
-   					<span>810 W Lake St</span>
-   					<span>Minneapolis, MN 55408</span>
-   				</a>
-   				<div class="buyTicksBtnWrapper">
-   					<span>Tickets are $6-$12 at the door or online. </span>
-   					<a href="http://www.brownpapertickets.com/event/684230" target="_blank" class="buyTicksBtn">Buy Tickets Online</a>
-   				</div>
-   			</div>
    		</div>
 
-   		<!-- Sometimes we need svg shapes -->
-   		<clipPath id="frame6">
-			<ellipse cx="284" cy="213" rx="284" ry="213"></ellipse>
-		</clipPath>
+		<!-- dust templates -->
+
+		<div id="nextShowDustTemplate" style="display:none;">
+			<h1 class="nextShowTop">Next Show</h1>
+			{#performers}
+   			<div class="perfWrapper left {?customOptions.threePerformers}threePerfs{/customOptions.threePerformers}">
+   				<h2>{name}</h2>
+   				<span class="longDesc">{bio}</span>
+   				<img src="img/headShots/{image.name}"/>
+   			</div>
+   			{/performers}
+   			<div class="showDetails"></div>
+		</div>
+
+		<div id="showDetails" style="display:none;"> 
+			<h1>{date.fullDate}</h1>
+			<h2>{date.time}</h2>
+			<span><a href="{venue.webSite}" target="_blank">{venue.name}</a></span>
+			<a href="{venue.mapLink}" target="_blank">
+				<span>{venue.addressLine1}</span>
+				<span>{venue.addressLine2}</span>
+			</a>
+			<div class="buyTicksBtnWrapper">
+				<span>Tickets are {tickets.price} at the door or online. </span>
+				<a href="{tickets.link}" target="_blank" class="buyTicksBtn">Buy Tickets Online</a>
+			</div>
+		</div>
+
+		<div id="mobileQuickStats" style="display:none;">
+		   	<h1>{date.dayOfWeek}, {date.fullDate}</h1>
+			<h2>Doors at {date.doorsOpen} -- Show starts at {date.showStart}</h2>
+			<span><a href="{venue.webSite}" target="_blank">{venue.name}</a></span>
+			<a href="{venue.mapLink}" target="_blank">
+				<span>{venue.addressLine1}</span>
+				<span>{venue.addressLine2}</span>
+			</a>
+		</div>
+
+		<div id="performerStylesTpl" style="display:none;">
+			{#performers}
+				.frame6 .picFrameMainLink.perf{$idx} {
+					background: url("../img/headShots/{image.name}") {image.framePosition.x}px {image.framePosition.y}px;
+				}
+			{/performers}
+		</div>
+
+		<div id="mainPerfsTpl" style="display:none;">
+			{#performers}
+			<span id='perf{$idx}'>{name}</span>
+			{/performers}
+			<span class="sub">Featured Performer</span>
+			<div class="picSliderWrapper">
+				<div class="picSlider">
+					<div class="picSliderContent {?customOptions.threePerformers}threePerfs{/customOptions.threePerformers}">
+						{#performers}	
+						<span>{name}</span>
+
+     					{@math key="{$idx}" method="add" operand="1"}
+							{@lt value="{$len}"}
+						 		<span class="plus">&</span>
+							{/lt}
+						{/math}
+ 						
+						{/performers}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="nextShowTpl" style="display:none;">
+			<span class="nextShow header">Next Show</span>
+			<span class="nextShow thurs">{date.dayOfWeek}</span>
+			<span class="nextShow date"><sup class="topNum">{date.monthNumber}</sup><span class="dateSlash">&frasl;</span><sub>{date.dayNumber}</sub></span>
+			<div class="picSliderWrapper">
+				<div class="picSlider">
+					<div class="picSliderContent">
+						{date.monthOccurance} {date.dayOfWeek} of the Month
+						<span>{date.fullDate}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		<!-- Javascript at end of body for faster page loads, ya'll -->
 		<!--[if IE 8]>
@@ -365,10 +382,12 @@
 		<!--[if !IE 8]> -->
 			<script src="lib/jquery-2.0.3.min.js"></script>
 		<!-- <![endif]-->
+		<script src="lib/dust-full.min.js"></script>
+		<script src="lib/dust-helpers.min.js"></script>
 		<script src="lib/jquery-ui-1.10.3.custom.min.js"></script>
 		<script src="lib/iLightBox/js/ilightbox.packed.js"></script>
 		<script src="lib/iLightBox/js/jquery.mousewheel.js"></script>
-		<script src="js/storyClub.js?ver1.29"></script>
+		<script src="js/storyClub.js?ver1.30"></script>
 		<script src="lib/placeholders.min.js"></script>
 	</body>
 </html>

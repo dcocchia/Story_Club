@@ -415,42 +415,25 @@ sup.topNum {
 	line-height: 30px;
 }
 
-
-
-/*NOTE: Always remember to add these images to the preloader */
-.frame6 .picFrameMainLink.perf1 {
-	background: url("../img/headShots/NimoFarah.jpg") -18px 13px; /* Main Headshot 1 */
+.frame6 .picFrameMainLink.perf0 #perf1 {
+	display: none;
 }
 
-.frame6 .picFrameMainLink.perf2 {
-	background: url("../img/headShots/WangPing.jpg") -52px 12px; /* Main Headshot 2 */
+.frame6 .picFrameMainLink.perf0 #perf2 {
+	display: none;
 }
 
-.frame6 .picFrameMainLink.perf3 {
-	background: url("../img/headShots/KateMoore.jpg") -33px 0; /* Main Headshot 3 -- Rarely used. */
+.frame6 .picFrameMainLink.perf1 #perf0 {
+	display: none;
 }
-
-
-
 .frame6 .picFrameMainLink.perf1 #perf2 {
 	display: none;
 }
 
-.frame6 .picFrameMainLink.perf1 #perf3 {
+.frame6 .picFrameMainLink.perf2 #perf0 {
 	display: none;
 }
-
 .frame6 .picFrameMainLink.perf2 #perf1 {
-	display: none;
-}
-.frame6 .picFrameMainLink.perf2 #perf3 {
-	display: none;
-}
-
-.frame6 .picFrameMainLink.perf3 #perf1 {
-	display: none;
-}
-.frame6 .picFrameMainLink.perf3 #perf2 {
 	display: none;
 }
 

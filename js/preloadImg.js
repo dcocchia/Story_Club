@@ -83,13 +83,11 @@
 
 	//preload headshots
 	var img1 = new Image();
-	img1.src = 'img/headShots/NimoFarah.jpg';
+	img1.src = 'img/headShots/NikolasMartell.jpg';
 
 	var img2 = new Image();
-	img2.src = 'img/headShots/WangPing.jpg';
+	img2.src = 'img/headShots/MahmoudHakima.jpg';
 
-	var img3 = new Image();
-	img3.src = 'img/headShots/KateMoore.jpg';
 
 	//show images when they're ready
 	window.onload = function() {

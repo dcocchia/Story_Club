@@ -3,10 +3,121 @@
  //  Dominic Cocchiarella 2013(c)   //
 //=================================//
 
+var TemplateLoader = (function($){
+	var templateLoader = {},
+		self = templateLoader,
+		siteData;
+
+	templateLoader.requestSiteInfo = function() {
+		$.ajax({
+			url: "/siteInfo",
+			success: function(data) {
+				siteData = data;
+				self.renderTemplates();
+				StoryClub.initialize();
+			},
+			error: function(a,b,c) {
+				console.error("getSiteInfo ERROR: ", a, b, c);
+				console.warn("Begining storyclub.initialize without siteInfo");
+				StoryClub.initialize();
+			}
+		});
+	}
+
+	templateLoader.getSiteData = function() {
+		return siteData || {};
+	}
+
+	templateLoader.writeTemplate = function(html, el) {
+		$(el).html(html);
+	}
+
+	templateLoader.writeError = function(err) {
+		console.error("ERROR rendering template: ", err);
+	}
+
+	templateLoader.renderTemplate = function(options) {
+		var data = (options.data) ? options.data : siteData;
+
+		dust.render(options.name, data, function(err, html) {
+			if (!err) {
+				options.success.call(templateLoader, html, options.el);
+			} else {
+				options.error.call(templateLoader, err);
+			}
+		})
+	}
+
+	templateLoader.renderTemplates = function() {
+		var i = 0 ,
+			tempsLen = templateLoader.templates.length,
+			thisTpl;
+
+		for (; i < tempsLen; i++) {
+			thisTpl = templateLoader.templates[i];
+			thisTpl.compiled = dust.compile(thisTpl.tpl, thisTpl.name);
+			dust.loadSource(thisTpl.compiled);
+			self.renderTemplate(thisTpl);
+		}
+	}
+
+	templateLoader.findTemplates = function() {
+		self.templates = [
+			{
+				tpl: $("#mobileQuickStats").html(),
+				name: "mobileQuickStats",
+				el: ".mobileQuickStats",
+				success: self.writeTemplate,
+				error: self.writeError
+			},
+			{
+				tpl: $("#performerStylesTpl").html(),
+				name: "performerStyles",
+				el: "#performerStyles",
+				success: self.writeTemplate,
+				error: self.writeError
+			},
+			{
+				tpl: $("#mainPerfsTpl").html(),
+				name: "mainPerfs",
+				el: "#mainPerfs",
+				success: self.writeTemplate,
+				error: self.writeError
+			},
+			{
+				tpl: $("#nextShowTpl").html(),
+				name: "nextShow",
+				el: "#nextShow",
+				success: self.writeTemplate,
+				error: self.writeError
+			},
+			{
+				tpl: $("#nextShowDustTemplate").html(),
+				name: "nextShowTemplate",
+				el: "#nextShowTemplate",
+				success: self.writeTemplate,
+				error: self.writeError
+			},
+			{
+				tpl: $("#showDetails").html(),
+				name: "showDetails",
+				el: ".showDetails",
+				success: self.writeTemplate,
+				error: self.writeError
+			}
+		]
+	}
+	
+
+	return templateLoader;
+}(jQuery));
+
+
 // Module style keeps gobal scope clean
 var StoryClub = (function ($) {
 	var storyClub = {}; //exported global var
-	var threePerformers = true; //special logic throughout for when we have 3 features
+	var siteData;
+	var threePerformers;
 
 	var loadingSpinner,
 		headShotTimer,
@@ -28,16 +139,39 @@ var StoryClub = (function ($) {
 		    };
 		}
 
+	storyClub.initialize = function() {
+
+		storyClub.setSiteData();
+
+		threePerformers = function() {
+			if (siteData.performers && siteData.performers.length === 3) {
+				return true;
+			} else {
+				return false;
+			}
+		}(); //special logic throughout for when we have 3 feature
+
 		if (!threePerformers) {
-			currentPerf = (Math.floor(Math.random() * 2) + 1).toString(), //choose at random
-			waitingPerf = (currentPerf === "1") ? "2" : "1"; //if 1 this will be 2 and vice versa
+			currentPerf = (Math.floor(Math.random() * 2)).toString(), //choose at random
+			waitingPerf = (currentPerf === "0") ? "1" : "0"; //if 0 this will be 1 and vice versa
 		} else {
 			var perfArray = ['1', '2', '3'];
 			
-			currentPerf = (Math.floor(Math.random() * 3) + 1).toString(); //choose at random
+			currentPerf = (Math.floor(Math.random() * 3)).toString(); //choose at random
 			perfArray.splice(perfArray.indexOf(currentPerf), 1); //remove chosen perf from possible waiting perf
 			waitingPerf = perfArray[Math.floor(Math.random()*perfArray.length)]; //choose from the array
 		}
+
+		storyClub.bindWindowEvents();
+		storyClub.bindPicEvents();
+		storyClub.bindLightBoxEvents();
+		storyClub.initHeadShotCycle();
+		storyClub.flickrInterface.preFetch();
+	}
+
+	storyClub.setSiteData = function() {
+		 siteData = (TemplateLoader) ? TemplateLoader.getSiteData() : {}
+	}
 
 	storyClub.initSpinner = function() {
 		var	opts = {
@@ -101,8 +235,8 @@ var StoryClub = (function ($) {
 	storyClub.startHeadShotCycle = function() {
 		var $this = $(".frame6 .picFrameMainLink"),
 			cycle = function() {
-				waitingPerf = (currentPerf === "1") ? "1" : "2"; //if 1 this will be 2 and vice versa
-				currentPerf = (waitingPerf === "1") ? "2" : "1"; //if 1 this will be 2 and vice versa
+				waitingPerf = (currentPerf === "0") ? "0" : "1"; //if 1 this will be 2 and vice versa
+				currentPerf = (waitingPerf === "0") ? "1" : "0"; //if 1 this will be 2 and vice versa
 
 				$(".perf" + currentPerf).fadeOut(function() {
 			    	$(this).removeClass("perf" + currentPerf).addClass("perf" + waitingPerf).fadeIn();
@@ -112,7 +246,7 @@ var StoryClub = (function ($) {
 
 			if (threePerformers) {
 				cycle = function() {
-					var perfArray = ['1', '2', '3'];
+					var perfArray = ['0', '1', '2'];
 			
 					perfArray.splice(perfArray.indexOf(currentPerf), 1); //remove chosen perf from possible waiting perf
 					waitingPerf = perfArray[Math.floor(Math.random()*perfArray.length)]; //choose from the array
@@ -171,13 +305,14 @@ var StoryClub = (function ($) {
 			flickrPage = 1,
 			photoSetsLoaded = false,
 			preFetching = false,
-			$photoBackBtn = $("#photoViewBackBtn");
+			$photoBackBtn = $("#photoViewBackBtn"),
+			retryAttempts = 0;
 
 		this.picSetsInfo;
 		this.picSets;
 
 		this.getPicSets = function() {
-			var url = "http://api.flickr.com/services/rest/",
+			var url = "https://api.flickr.com/services/rest/",
 				settings = {
 					dataType: "json",
 					error: flickSelf.getPicSetsError,
@@ -233,7 +368,7 @@ var StoryClub = (function ($) {
 		};
 
 		this.getPics = function(photoSetId) {
-			var url = "http://api.flickr.com/services/rest/",
+			var url = "https://api.flickr.com/services/rest/",
 				settings = {
 					dataType: "json",
 					error: flickSelf.getPicError,
@@ -257,12 +392,18 @@ var StoryClub = (function ($) {
 			console.log("getPics call failed: ", jqXHR, textStatus, errorThrown); //just logging to console for now
 			console.log("Attempting call once more.");
 
-			if ($.browser.msie && !jQuery.support.cors) {
-				console.log("CORS disabled. Enabling and trying again.");
-				jQuery.support.cors = true;
-			}
+			if (retryAttempts < 2) {
+				retryAttempts += 1;
 
-			getPics(); //try one more time
+				if ((navigator.userAgent.indexOf('msie') !== -1) && !jQuery.support.cors) {
+					console.log("CORS disabled. Enabling and trying again.");
+					jQuery.support.cors = true;
+				}
+
+				flickSelf.getPics(); //try one more time
+			} else {
+				console.warn("getPics retry attempts failed.");
+			}
 		};
 
 		this.getPicSucces = function( data ) {
@@ -672,44 +813,52 @@ var StoryClub = (function ($) {
 		});
 	}
 
-	storyClub.getTubeLists = function(callback) {
-		settings = {
-			type: "GET",
-			data: {
-				part:"id",
-				channelId: "UCwUpa_FAmJ7HTxY0Vkr8t5A",
-				key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
-			},
-			url: "https://www.googleapis.com/youtube/v3/playlists",
-			success: function( data ) {
-				callback.call(this, data);
-			},
-			error: function( a,b,c ) { 
-				console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
+	storyClub.tubeApi = function() {
+		var tubeSelf = this,
+			playlistsLoaded = false,
+			$vidsBackBtn = $("#vidViewBackBtn");
+
+		this.playlists;
+
+		this.getLists = function(callback) {
+			settings = {
+				type: "GET",
+				data: {
+					part:"id",
+					channelId: "UCwUpa_FAmJ7HTxY0Vkr8t5A",
+					key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
+				},
+				url: "https://www.googleapis.com/youtube/v3/playlists",
+				success: function( data ) {
+					callback.call(this, data);
+				},
+				error: function( a,b,c ) { 
+					console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
+				}
 			}
+
+			$.ajax(settings);
 		}
 
-		$.ajax(settings);
-	}
-
-	storyClub.getTubeVids = function(listId, callback) {
-		settings = {
-			type: "GET",
-			data: {
-				part: "id,contentDetails",
-				playlistId: listId,
-				key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
-			},
-			url: "https://www.googleapis.com/youtube/v3/playlistItems",
-			success: function( data ) {
-				callback.call(this, data);
-			},
-			error: function( a,b,c ) { 
-				console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
+		this.getVids = function(listId, callback) {
+			settings = {
+				type: "GET",
+				data: {
+					part: "id,contentDetails",
+					playlistId: listId,
+					key: "AIzaSyB7w5e071oXQDoLFo_EsNK3n5FMHlLZIHE"
+				},
+				url: "https://www.googleapis.com/youtube/v3/playlistItems",
+				success: function( data ) {
+					callback.call(this, data);
+				},
+				error: function( a,b,c ) { 
+					console.warn("There was an error requesting playlists from YouTube: ", a,b,c);
+				}
 			}
-		}
 
-		$.ajax(settings);
+			$.ajax(settings);
+		}
 	}
 
 	storyClub.contactFormSubmit = function(lightBox) {
@@ -776,14 +925,12 @@ var StoryClub = (function ($) {
 	};
 
 	storyClub.flickrInterface = new storyClub.flickApi();
+	storyClub.tubeInterface = new storyClub.tubeApi();
 
 	return storyClub; //export the storyClub object and any function/vars inside it
 }(jQuery));
 
 $(document).ready(function() {
-	StoryClub.bindWindowEvents();
-	StoryClub.bindPicEvents();
-	StoryClub.bindLightBoxEvents();
-	StoryClub.initHeadShotCycle();
-	StoryClub.flickrInterface.preFetch();
+	TemplateLoader.findTemplates();
+	TemplateLoader.requestSiteInfo();
 });
