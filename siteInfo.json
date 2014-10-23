@@ -1,12 +1,12 @@
 {
 	"date": {
-		"month": "September",
-		"day": "25th",
-		"monthNumber": 9,
-		"dayNumber": 25,
+		"month": "November",
+		"day": "20th",
+		"monthNumber": 11,
+		"dayNumber": 20,
 		"dayOfWeek": "Thursday",
-		"monthOccurance": "last",
-		"fullDate": "September 25th, 2014",
+		"monthOccurance": "third",
+		"fullDate": "November 20th, 2014",
 		"showStart": "7:00 PM",
 		"doorsOpen": "6:00 PM"
 	},
@@ -19,14 +19,14 @@
 	},
 	"tickets": {
 		"price": "$6-$12",
-		"link": "http://www.brownpapertickets.com/event/817431"
+		"link": "http://www.brownpapertickets.com/event/892022"
 	},
 	"performers": [
 		{
-			"name": "Nikolas Martell",
-			"bio": "Nikolas Martell is a professional performing artist, specializing in spoken word. He is a national slam poetry champion, slam poetry coach, and producer of the OUTspoken! Presents monthly queer open mic and cabaret series.",
+			"name": "Courtney Algeo",
+			"bio": "Courtney Algeo loves tacos, video games, her son & husband, mix tapes, and the word \"yes.\" She tells stories for the Minneapolis Institute of Arts.",
 			"image": {
-				"name": "NikolasMartell.jpg",
+				"name": "CourtneyAlgeo.jpg",
 				"framePosition": {
 					"x": 0,
 					"y": 0
@@ -34,18 +34,29 @@
 			}
 		},
 		{
-			"name": "Mahmoud Hakima",
-			"bio": "Mahmoud Hakima is a Twin Cities storyteller. He created and performed the MN Fringe solo hits, \"Two Bowls  of Cereal and Some Bacon\" and \"Can Michael Come Out and Play?\"",
+			"name": "Amina Harper",
+			"bio": "Amina Harper is a local artist, writer and snack enthusiast. She has contributed to Paper Darts Magazine, The Tangential, MPLSzine and writes a weekly art column for the Daily Planet.",
 			"image": {
-				"name": "MahmoudHakima.jpg",
+				"name": "AminaHarper.jpg",
 				"framePosition": {
-					"x": -38,
-					"y": 12
+					"x": 0,
+					"y": 0
+				}
+			}
+		},
+		{
+			"name": "Cat Hammond",
+			"bio": "Cat Hammond writes about gender! He has performed original work most recently in 20% Theatre's The Naked I: Insides Out and Intermedia Arts' Queer Voices reading series.",
+			"image": {
+				"name": "CatHammond.jpg",
+				"framePosition": {
+					"x": 0,
+					"y": 0
 				}
 			}
 		}
 	],
 	"customOptions": {
-		"threePerformers": false
+		"threePerformers": true
 	}
 }
