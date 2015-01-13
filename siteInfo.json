@@ -1,12 +1,12 @@
 {
 	"date": {
-		"month": "November",
-		"day": "20th",
-		"monthNumber": 11,
-		"dayNumber": 20,
+		"month": "January",
+		"day": "29th",
+		"monthNumber": 1,
+		"dayNumber": 29,
 		"dayOfWeek": "Thursday",
-		"monthOccurance": "third",
-		"fullDate": "November 20th, 2014",
+		"monthOccurance": "last",
+		"fullDate": "January 29th, 2015",
 		"showStart": "7:00 PM",
 		"doorsOpen": "6:00 PM"
 	},
@@ -19,44 +19,35 @@
 	},
 	"tickets": {
 		"price": "$6-$12",
-		"link": "http://www.brownpapertickets.com/event/892022"
+		"link": "http://www.brownpapertickets.com/event/1021884"
 	},
 	"performers": [
 		{
-			"name": "Courtney Algeo",
-			"bio": "Courtney Algeo loves tacos, video games, her son & husband, mix tapes, and the word \"yes.\" She tells stories for the Minneapolis Institute of Arts.",
+			"name": "Molly Schultz Pederson",
+			"longName": true,
+			"bio": "Molly Schultz Pederson is a writer and raconteur who hails from Wisconsin. She currently works for Governor Dayton, but can't talk about it or she'd have to kill you.",
 			"image": {
-				"name": "CourtneyAlgeo.jpg",
+				"name": "MollySchultzPederson.jpg",
 				"framePosition": {
-					"x": 0,
-					"y": 0
+					"x": -45,
+					"y": 12
 				}
 			}
 		},
 		{
-			"name": "Amina Harper",
-			"bio": "Amina Harper is a local artist, writer and snack enthusiast. She has contributed to Paper Darts Magazine, The Tangential, MPLSzine and writes a weekly art column for the Daily Planet.",
+			"name": "Haddayr Copley-Woods",
+			"longName": true,
+			"bio": "Haddayr Copley-Woods writes fiction, essays, criticism, and an advice column. She lives with her unconventional, sprawling family in Powderhorn Park, Minneapolis.",
 			"image": {
-				"name": "AminaHarper.jpg",
+				"name": "HaddayrCopley-Woods.jpg",
 				"framePosition": {
 					"x": 0,
-					"y": 0
-				}
-			}
-		},
-		{
-			"name": "Cat Hammond",
-			"bio": "Cat Hammond writes about gender! He has performed original work most recently in 20% Theatre's The Naked I: Insides Out and Intermedia Arts' Queer Voices reading series.",
-			"image": {
-				"name": "CatHammond.jpg",
-				"framePosition": {
-					"x": 0,
-					"y": 0
+					"y": 13
 				}
 			}
 		}
 	],
 	"customOptions": {
-		"threePerformers": true
+		"threePerformers": false
 	}
 }

@@ -484,6 +484,10 @@ sup.topNum {
 	top: 45px;
 }
 
+.picFrame.frame6 .picSliderContent .longName {
+	font-size: 15px;
+}
+
 .picFrame .canvasPlaceHolder {
 	background: url("../img/canvasBG.png") 0 0;
 	width: 100%;

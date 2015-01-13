@@ -338,14 +338,14 @@
 
 		<div id="mainPerfsTpl" style="display:none;">
 			{#performers}
-			<span id='perf{$idx}'>{name}</span>
+			<span id='perf{$idx}' class='{?longName}longName{/longName}'>{name}</span>
 			{/performers}
 			<span class="sub">Featured Performer</span>
 			<div class="picSliderWrapper">
 				<div class="picSlider">
 					<div class="picSliderContent {?customOptions.threePerformers}threePerfs{/customOptions.threePerformers}">
 						{#performers}	
-						<span>{name}</span>
+						<span class="{?longName}longName{/longName}">{name}</span>
 
      					{@math key="{$idx}" method="add" operand="1"}
 							{@lt value="{$len}"}
