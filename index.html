@@ -366,6 +366,53 @@
 			</div>
 		</div>
 
+		<div id="interviewListTpl" style="display:none;">
+			<ul>
+				{#interviews}
+				<li>
+					<a href="#" class="interviewLink" data-interviewee-name="{.}">{.}</a>
+				</li>
+				{/interviews}
+			</ul>
+		</div>
+
+		<div id="interviewList" style="display:none;">
+		</div>
+
+		<div id="interviewTpl" style="display:none;">
+			<div class="top">
+				{?interviewee.image}
+				<div class="left">
+					<div class="imgWrapper">
+						<img src="/img/headshots/{interviewee.image.name}" />
+					</div>
+				</div>
+				{/interviewee.image}
+				<div class="right{^interviewee.image} noImg{/interviewee.image}">
+					<h1>{interviewee.name}</h1>
+					{?interviewee.bio}<p>{interviewee.bio}</p>{/interviewee.bio}
+				</div>
+			</div>
+
+			{?date}
+			<p class="dateLoc">{date}</p>
+			{/date}
+
+			{?location}
+			<p class="dateLoc">{location}</p>
+			{/location}
+
+			{#questions}
+			<div class="intQuestion">
+				<p><span class="intName">{interviewerName}</span>: {q}</p>
+				<p><span class="intName">{interviewee.name}</span>: {a}</p>
+			</div>
+			{/questions}
+
+		</div>
+
+		<div id="interview" style="display:none;"></div>
+
 
 		<!-- Javascript at end of body for faster page loads, ya'll -->
 		<!--[if IE 8]>

@@ -47,6 +47,10 @@
 			}
 		}
 	],
+	"interviews": [
+		"testInterview1",
+		"testInterview2"
+	],
 	"customOptions": {
 		"threePerformers": false
 	}

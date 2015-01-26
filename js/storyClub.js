@@ -10,7 +10,8 @@ var TemplateLoader = (function($){
 
 	templateLoader.requestSiteInfo = function() {
 		$.ajax({
-			url: "/siteInfo",
+			url: "/siteInfo.json",
+			dataType: "json",
 			success: function(data) {
 				siteData = data;
 				self.renderTemplates();
@@ -104,6 +105,13 @@ var TemplateLoader = (function($){
 				el: ".showDetails",
 				success: self.writeTemplate,
 				error: self.writeError
+			},
+			{
+				tpl: $("#interviewListTpl").html(),
+				name: "interview",
+				el: "#interviewList",
+				success: self.writeTemplate,
+				error: self.writeError
 			}
 		]
 	}
@@ -142,6 +150,7 @@ var StoryClub = (function ($) {
 	storyClub.initialize = function() {
 
 		storyClub.setSiteData();
+		StoryClub.checkURIQuery();
 
 		threePerformers = function() {
 			if (siteData.performers && siteData.performers.length === 3) {
@@ -171,6 +180,22 @@ var StoryClub = (function ($) {
 
 	storyClub.setSiteData = function() {
 		 siteData = (TemplateLoader) ? TemplateLoader.getSiteData() : {}
+	}
+
+	storyClub.checkURIQuery = function() {
+		var query = location.search;
+		var interviewQuery = query.indexOf("?interview=");
+		var intervieweeName;
+
+		if (interviewQuery > -1) {
+			intervieweeName = location.search.slice(location.search.indexOf("?interview=") + 11);	
+		}
+
+		if (siteData && siteData.interviews && siteData.interviews.indexOf(intervieweeName) > -1) {
+			storyClub.loadInterview(intervieweeName);	
+		}
+
+		console.warn("No interview in siteInfo.json with the name: ", intervieweeName);
 	}
 
 	storyClub.initSpinner = function() {
@@ -752,6 +777,11 @@ var StoryClub = (function ($) {
 				}
 			]);
 		});
+
+		$("#interviewList").undelegate(".interviewLink", "click").delegate(".interviewLink", "click", function(e) {
+			if (e && e.preventDefault) { e.preventDefault() }
+			storyClub.loadInterview($(e.currentTarget).attr("data-interviewee-name"));
+		});
 		
 	}
 
@@ -922,6 +952,47 @@ var StoryClub = (function ($) {
 		}
 
 		return (!somethingNotDone);
+	};
+
+	storyClub.loadInterview = function(interviewer) {
+		var ajaxCall = $.Deferred();
+		var lightBoxRender = $.Deferred();
+		var template = dust.compile($("#interviewTpl").html(), 'interviewTpl');
+
+		dust.loadSource(template);
+
+		$.getJSON("/interviews/" + interviewer + "/" + interviewer + ".json")
+			.done(function(data){
+				ajaxCall.resolve(data);
+			});
+
+		$.iLightBox([
+			{
+				URL:"#interview",
+				type:"inline",
+				options: {
+					width: "90%",
+					height: "90%",
+					onRender: function(e) {
+						lightBoxRender.resolve(e);
+					}
+				}
+			}
+		]);
+
+		$.when(ajaxCall, lightBoxRender)
+			.done(function(ajaxData, renderData) {
+				TemplateLoader.renderTemplate({
+					el: $("#interview"),
+					data: ajaxData,
+					name: "interviewTpl",
+					success: function(html, el) {
+						TemplateLoader.writeTemplate(html, renderData.element.find("#interview"));
+					},
+					error: TemplateLoader.writeError
+				});
+			});
+
 	};
 
 	storyClub.flickrInterface = new storyClub.flickApi();
